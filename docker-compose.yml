@@ -1,0 +1,39 @@
+version: "3.8"
+
+
+services:
+  mysql:
+    build: ./mysql
+    container_name: mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: carsgo
+      MYSQL_USER: daniel
+      MYSQL_PASSWORD: daniel03
+      MYSQL_ROOT_PASSWORD: daniel03
+    volumes:
+      - ${PWD}/mysql/data:/home
+      - ${PWD}/mysql/init_data:/docker-entrypoint-initdb.d/
+    ports:
+      - 3306:3306
+
+  flask:
+    depends_on:
+      - mysql
+      build: ./flask
+      container_name: flask
+      links:
+        - mysql
+      restart: always
+      environment:
+        - APP_NAME=MyFlaskApp
+        - DB_NAME=mysql
+      expose:
+        - 8080
+
+  nginx:
+    build: ./nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - 80:80
