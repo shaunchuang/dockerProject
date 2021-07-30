@@ -16,12 +16,8 @@
                            {{ form.hidden_tag() }}
                            <div class="titlepage">
                               <h2>Use model to Predict Price</h2>
-                           </div>
-                           <>
+                           </div>                           
                            <div class="row">
-                              <div>
-                                 <p>{{ form.model }}</p>
-                              </div>
                               <span>{{ error_info }}</span>
                               <div class="col-md-12">
                                  <p>{{ form.car_brand.label }}</p>
@@ -66,10 +62,6 @@
                               <div class="col-md-12">
                                  <p>{{ form.car_seat.label }}</p>
                                  <p>{{ form.car_seat(size=50) }}</p>
-                              </div>
-                              <div class="col-md-12">
-                                 <p>{{ form.car_verified.label }}</p>
-                                 <p>{{ form.car_verified(size=50) }}</p>
                               </div>
                               <div class="col-sm-12">
                                  <p>{{ form.submit(size=50) }}</p>
