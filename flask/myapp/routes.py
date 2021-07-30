@@ -1,8 +1,7 @@
-# import numpy as np
 from myapp import app
 from myapp.forms import UseModelForm
 from flask import render_template
-from myapp.model import predict, data_Collect
+from myapp.model import predict, data_Collect, resultcompute
 
 #from myapp.initpysql import connection
 
@@ -14,21 +13,21 @@ from myapp.model import predict, data_Collect
 #    connection.close()
 
 
-
 @app.route('/')
 @app.route('/index')
 def index():
     return render_template('index.html')
 
 
-@app.route('/usemodel', methods=['GET','POST'])
+@app.route('/usemodel', methods=['GET', 'POST'])
 def usemodel():
     error_info = None
     form = UseModelForm()
     if form.validate_on_submit():
         input = data_Collect(form)
         result = predict(input)
-        return render_template('usemodel_result.html', result = result, form=form)
-    
-    error_info='輸入格式錯誤請重新輸入'
+        result = resultcompute(result)
+        return render_template('usemodel_result.html', result=result, form=form)
+
+    error_info = '輸入格式錯誤請重新輸入'
     return render_template('usemodel.html', form=form, error_info=error_info)

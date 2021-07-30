@@ -14,7 +14,6 @@
                      <div class="col-md-6 offset-md-6">
                         <h4 class="multi">Evaluate Result<h4>
                            <div class="multi">
-                           <p>{{ form.model.label }}{{ form.model.data }}</p>
                            <p>{{ form.car_brand.label }}{{ form.car_brand.data }}</p>
                            <p>{{ form.car_model.label }}{{ form.car_model.data }}</p>
                            <p>{{ form.car_year.label }}{{ form.car_year.data }}</p>
@@ -22,9 +21,9 @@
                            </div>
                            <div class="multi">
                               Predict Price :
-                           </div><br>
+                           </div><hr>
                            <div class="multi">
-                              {{ result }}
+                              {{ result['set1'] }} ~ {{ result['set2'] }}
                            </div>
                      </div>
                   </div>
