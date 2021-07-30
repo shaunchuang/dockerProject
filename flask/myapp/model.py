@@ -1,9 +1,11 @@
 import pickle
 import gzip
 
-with gzip.open('./model/xgboost-predPrice.pgz', 'r') as f:
-    xgboostModel = pickle.load(f)
+
+
+with gzip.open('./model/randomforestRegressor.pgz', 'r') as f:
+    rf_r = pickle.load(f)
 
 def predict(input):
-    pred=xgboostModel.predict(input)[0]
+    pred=rf_r.predict(input)[0]
     return pred
