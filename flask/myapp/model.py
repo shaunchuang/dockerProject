@@ -37,6 +37,6 @@ def data_Collect(form):
         car_door = preprocessing.scale(car_door)
         car_seat = preprocessing.scale(car_seat)
         
-        array = np.array([1,1,int(car_year),int(car_mileage), 1, int(car_cylinderVolume), car_driveMode, 1, 1, car_door, car_seat])
-        input = pd.DataFrame([array], columns=[car_brand, car_model, 'car_year', 'car_mileage',car_color,'car_cylinderVolume','car_driveMode', car_gear, car_fuel,'car_door','car_seat'])
+        array = np.array([1,1,int(car_year),int(car_mileage), 1, int(car_cylinderVolume), car_driveMode, 1, 1, car_door, car_seat, 0])
+        input = pd.DataFrame([array], columns=[car_brand, car_model, 'car_year', 'car_mileage',car_color,'car_cylinderVolume','car_driveMode', car_gear, car_fuel,'car_door','car_seat','verified'])
         return input
