@@ -52,15 +52,15 @@ def data_Collect(form):
     car_door = form.car_door.data
     car_seat = form.car_seat.data
 
-
     if car_driveMode == '二輪驅動':
         car_driveMode = 2
     if car_driveMode == '四輪驅動':
         car_driveMode = 4
-    
+
     car_year = myscale(int(car_year), yearMean, yearStd)
     car_mileage = myscale(int(car_mileage), mileageMean, mileageStd)
-    car_cylinderVolume = myscale(int(car_cylinderVolume), cylinderVolumeMean, cylinderVolumeStd)
+    car_cylinderVolume = myscale(
+        int(car_cylinderVolume), cylinderVolumeMean, cylinderVolumeStd)
     car_driveMode = myscale(float(car_driveMode), driveModeMean, driveModeStd)
     car_door = myscale(float(car_door), doorMean, doorStd)
     car_seat = myscale(float(car_seat), seatMean, seatStd)
@@ -70,7 +70,7 @@ def data_Collect(form):
 
     car_color = re.sub(r'色$', '', car_color)
 
-    df1 = pd.read_csv('/Users/shaunchuang/Desktop/testcolumn.csv',
+    df1 = pd.read_csv('./myapp/csv/testcolumn.csv',
                       encoding='utf8', index_col=0)
     df2 = pd.DataFrame(columns=df1.columns)
     array = np.array([1, 1, int(car_year), int(car_mileage), 1, int(
@@ -87,6 +87,6 @@ def resultcompute(result):
     rmse = 0.001
     result1 = result - rmse
     result2 = result + rmse
-    result1 = round(math.exp(result1),2)
-    result2 = round(math.exp(result2),2)
+    result1 = round(math.exp(result1), 2)
+    result2 = round(math.exp(result2), 2)
     return {'set1': result1, 'set2': result2}
