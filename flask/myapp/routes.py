@@ -31,3 +31,7 @@ def usemodel():
 
     error_info = '輸入格式錯誤請重新輸入'
     return render_template('usemodel.html', form=form, error_info=error_info)
+
+@app.route('/loan')
+def loan():
+    return render_template('loan.html')

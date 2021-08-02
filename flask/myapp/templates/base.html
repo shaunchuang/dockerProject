@@ -69,13 +69,13 @@
                         <div class="collapse navbar-collapse" id="navbarsExample04">
                            <ul class="navbar-nav mr-auto">
                               <li class="nav-item">
-                                  <a class="nav-link" href="{{ url_for('index') }}"> Home  </a>
+                                  <a class="nav-link" href="{{ url_for('index') }}">Home</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="{{ url_for('usemodel') }}">Predict Model</a>
                               </li>
                               <li class="nav-item">
-                                 <a class="nav-link" href="#">About</a>
+                                 <a class="nav-link" href="{{ url_for('loan') }}">loan</a>
                               </li>
                               <li class="nav-item">
                                  <a class="nav-link" href="#">Contact us</a>
@@ -131,6 +131,8 @@
      <!-- sidebar -->
      <script src="{{ url_for('static', filename='js/jquery.mCustomScrollbar.concat.min.js')}}"></script>
      <script src="{{ url_for('static', filename='js/custom.js')}}"></script>
-     <script src="{{ url_for('static', filename='https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js')}}"></script>
+     <script src="https//:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+     <script src="{{ url_for('static', filename='js/loan.js') }}"></script>
   </body>
 </html>
+
