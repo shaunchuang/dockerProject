@@ -35,3 +35,7 @@ def usemodel():
 @app.route('/loan')
 def loan():
     return render_template('loan.html')
+
+@app.route('/model2result')
+def model2result():
+    return render_template('model2_result.html')

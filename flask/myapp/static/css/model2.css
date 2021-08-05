@@ -1,0 +1,57 @@
+/* .st1 a {
+  color: brown;
+  font-size: 150%;
+  font-family: 微軟正黑體;
+  border-left: 5%;
+  display: block;
+  margin: 1% auto 1% auto;
+  line-height: 25px;
+  text-align: center;
+}
+
+.st {
+  padding: 0;
+  margin: 0;
+}
+
+.car-photo {
+  display: block;
+  padding: 0;
+  margin: auto;
+}
+
+.car-block {
+  width: 18%;
+  height: 30%;
+  clear: none;
+  margin: 0% 5% 0% 5%;
+  border: 1px black solid;
+  border-radius: 5px;
+}
+
+.car-head {
+  text-align: center;
+}
+.car-describe {
+  text-align: center;
+  color: #000079;
+  font-weight: 400;
+}
+
+.li-test li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  float: left;
+  padding-left: 1%;
+  padding-right: 1%;
+  color: #f75000;
+}
+
+.car-price span {
+  color: red;
+  font-weight: 400;
+  font-size: 150%;
+  display: block;
+  text-align: center;
+} */
