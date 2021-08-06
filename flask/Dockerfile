@@ -3,6 +3,6 @@ FROM python:3.8
 WORKDIR /app
 ADD . /app
 RUN pip3 install -r requirements.txt
-CMD [ "uwsgi", "app.ini" ]
+# CMD [ "uwsgi", "app.ini" ]
 
 

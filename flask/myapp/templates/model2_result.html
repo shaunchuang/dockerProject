@@ -3,25 +3,24 @@
 <section class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
-            <a href="https://www.abccar.com.tw/car/1592246">
+            <a href="{{ car_url }}">
                 <div class="card h-100 text-center">
-                    <img src="https://img.abccar.com.tw/resize?key=285x190/https://image.abccar.com.tw/carimages/images/d078b965-c5cb-4031-b979-0c49b684971c.JPG"
-                        class="card-img-top" alt="...">
+                    <img src="{{ result['carPhoto'] }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">TOYOTA CAMRY HYBRID G (7代)</h5>
-                        <p class="card-text">省油省稅金</p>
+                        <h5 class="card-title">{{ result['carBrand'] }} {{ result['carModel'] }}</h5>
+                        <p class="card-text">{{ result['carTitle'] }}</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item list-group-item-action">2014 年</li>
-                        <li class="list-group-item list-group-item-action">7.6萬公里</li>
-                        <li class="list-group-item list-group-item-action"><span class="location">高雄市 ｜ </span><a
-                                class="address"
-                                href="https://www.google.com/maps/embed/v1/place?key=AIzaSyDst4YBBQ5SSqNogudbd0LiSyLMwpz77RY&q=台中市南區文心南路616號"
+                        <li class="list-group-item list-group-item-action">{{ result['carYear'] }}年</li>
+                        <li class="list-group-item list-group-item-action">{{ result['carMileage']/10000 }}萬公里</li>
+                        <li class="list-group-item list-group-item-action"><span class="location">{{
+                                result['carAddress'] }} ｜ </span><a class="address"
+                                href="https://www.google.com/maps/embed/v1/place?key=AIzaSyDst4YBBQ5SSqNogudbd0LiSyLMwpz77RY&q={{ result['dealerAddress'] }}"
                                 data-fancybox data-type="iframe" data-preload="false" data-width="50%"
                                 data-height="30%">查看地圖</a></li>
                     </ul>
                     <div class="card-footer">
-                        <small class="text-muted">55.8萬</small>
+                        <small class="text-muted">{{ result['carPrice']/10000 }}萬</small>
                     </div>
                 </div>
             </a>
@@ -127,5 +126,27 @@
             </a>
         </div>
     </div>
+</section>
+<div>{{ result }}</div>
+<section class="container">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
 </section>
 {% endblock %}

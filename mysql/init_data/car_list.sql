@@ -4,16 +4,22 @@ use carsgo;
 DROP TABLE IF EXISTS car_list;
 CREATE TABLE car_list(
     carID INT PRIMARY KEY,
-    carBrand varchar(80),
-    carModel varchar(80),
-    carYear varchar(80),
-    carPrice varchar(80),
-    carMileage varchar(80),
-    car
-    carPhoto varchar(800)
+    carBrand VARCHAR(100),
+    carModel VARCHAR(100),
+    carYear INT,
+    carPrice INT,
+    carMileage INT,
+    carAddress VARCHAR,
+    carTitle VARCHAR,
+    carPhoto VARCHAR,
+    dealerAddress VARCHAR,
+    source VARCHAR(80),
+    segment INT
+);
 
 
-LOAD DATA LOCAL INFILE  '/home/cardata.csv' INTO TABLE car
+LOAD DATA LOCAL INFILE  '/home/carList_forWebsite.csv' INTO TABLE car_list
+CHARACTER SET utf8mb4
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 LINES;
