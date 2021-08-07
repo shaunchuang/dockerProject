@@ -2,6 +2,7 @@
 {% block content %}
 <section class="container">
     <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for r in result %}
         <div class="col">
             <a href="{{ car_url }}">
                 <div class="card h-100 text-center">
@@ -12,7 +13,8 @@
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item list-group-item-action">{{ result['carYear'] }}年</li>
-                        <li class="list-group-item list-group-item-action">{{ result['carMileage']/10000 }}萬公里</li>
+                        <li class="list-group-item list-group-item-action">{{ round(result['carMileage']/10000,2) }}萬公里
+                        </li>
                         <li class="list-group-item list-group-item-action"><span class="location">{{
                                 result['carAddress'] }} ｜ </span><a class="address"
                                 href="https://www.google.com/maps/embed/v1/place?key=AIzaSyDst4YBBQ5SSqNogudbd0LiSyLMwpz77RY&q={{ result['dealerAddress'] }}"
@@ -20,11 +22,12 @@
                                 data-height="30%">查看地圖</a></li>
                     </ul>
                     <div class="card-footer">
-                        <small class="text-muted">{{ result['carPrice']/10000 }}萬</small>
+                        <small class="text-muted">{{ round(result['carPrice']/10000,2) }}萬</small>
                     </div>
                 </div>
             </a>
         </div>
+        {% endfor %}
         <div class="col">
             <a href="https://www.abccar.com.tw/car/1560880">
                 <div class="card h-100 text-center">

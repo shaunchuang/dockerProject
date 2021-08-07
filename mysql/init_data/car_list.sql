@@ -3,17 +3,17 @@ GRANT ALL PRIVILEGES ON *.* TO 'daniel'@'%' WITH GRANT OPTION;
 use carsgo;
 DROP TABLE IF EXISTS car_list;
 CREATE TABLE car_list(
-    carID INT PRIMARY KEY,
-    carBrand VARCHAR(100),
-    carModel VARCHAR(100),
+    carID VARCHAR(200) PRIMARY KEY,
+    carBrand VARCHAR(200),
+    carModel VARCHAR(200),
     carYear INT,
     carPrice INT,
     carMileage INT,
-    carAddress VARCHAR,
-    carTitle VARCHAR,
-    carPhoto VARCHAR,
-    dealerAddress VARCHAR,
-    source VARCHAR(80),
+    carAddress VARCHAR(1000),
+    carTitle VARCHAR(1000),
+    carPhoto VARCHAR(1000),
+    dealerAddress VARCHAR(1000),
+    source VARCHAR(200),
     segment INT
 );
 
