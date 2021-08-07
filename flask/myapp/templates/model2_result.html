@@ -6,7 +6,7 @@
         <div class="col">
             <a href="{{ car_url }}">
                 <div class="card h-100 text-center">
-                    <img src="{{ result['carPhoto'] }}" class="card-img-top" alt="...">
+                    <img src="{{ r['carPhoto'] }}" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">{{ r['carBrand'] }} {{ r['carModel'] }}</h5>
                         <p class="card-text">{{ r['carTitle'] }}</p>
@@ -17,7 +17,7 @@
                         </li>
                         <li class="list-group-item list-group-item-action"><span class="location">{{
                                 r['carAddress'] }} ｜ </span><a class="address"
-                                href="https://www.google.com/maps/embed/v1/place?key=AIzaSyDst4YBBQ5SSqNogudbd0LiSyLMwpz77RY&q={{ result['dealerAddress'] }}"
+                                href="https://www.google.com/maps/embed/v1/place?key=AIzaSyDst4YBBQ5SSqNogudbd0LiSyLMwpz77RY&q={{ r['dealerAddress'] }}"
                                 data-fancybox data-type="iframe" data-preload="false" data-width="50%"
                                 data-height="30%">查看地圖</a></li>
                     </ul>
@@ -28,121 +28,23 @@
             </a>
         </div>
         {% endfor %}
-        <div class="col">
-            <a href="https://www.abccar.com.tw/car/1560880">
-                <div class="card h-100 text-center">
-                    <img src="https://img.abccar.com.tw/resize?key=285x190/https://image.abccar.com.tw/carimages/images/709be683-659d-45e2-9860-4e75ad7829f4.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">LEXUS IS300H</h5>
-                        <p class="card-text">Lexus CPO 原廠認證中古車
-                        </p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item list-group-item-action">2013年</li>
-                        <li class="list-group-item list-group-item-action">4.5萬公里</li>
-                        <li class="list-group-item list-group-item-action"><span class="location">高雄市 ｜ </span><a
-                                class="address"
-                                href="https://www.google.com/maps/embed/v1/place?key=AIzaSyDst4YBBQ5SSqNogudbd0LiSyLMwpz77RY&q=台中市南區文心南路616號"
-                                data-fancybox data-type="iframe" data-preload="false" data-width="50%"
-                                data-height="30%">查看地圖</a></li>
-                    </ul>
-                    <div class="card-footer">
-                        <small class="text-muted">91.8萬</small>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col">
-            <a href="https://www.abccar.com.tw/car/1588804">
-                <div class="card h-100 text-center">
-                    <img src="https://img.abccar.com.tw/resize?key=285x190/https://image.abccar.com.tw/carimages/images/58bfae9270e87d1b56f8f972a297656d.jpg"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Volvo S90 T4 Momentum</h5>
-                        <p class="card-text">20年式 S90 T4 Momentum
-                        </p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item list-group-item-action">2019年</li>
-                        <li class="list-group-item list-group-item-action">1萬公里</li>
-                        <li class="list-group-item list-group-item-action"><span class="location">高雄市 ｜ </span><a
-                                class="address"
-                                href="https://www.google.com/maps/embed/v1/place?key=AIzaSyDst4YBBQ5SSqNogudbd0LiSyLMwpz77RY&q=台中市南區文心南路616號"
-                                data-fancybox data-type="iframe" data-preload="false" data-width="50%"
-                                data-height="30%">查看地圖</a></li>
-                    </ul>
-                    <div class="card-footer">
-                        <small class="text-muted">170萬</small>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col">
-            <a href="">
-                <div class="card h-100 text-center">
-                    <img src="https://img.abccar.com.tw/resize?key=285x190/https://image.abccar.com.tw/carimages/images/aa101177a08ebde32a26184e0a6c4fc4.png"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Skoda Superb 2.0 TSI L&K (Mk3) 2017</h5>
-                        <p class="card-text">絕美SUPERB 空間動力加上超美外觀超殺價錢 慢了絕對買不到
-                        </p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item list-group-item-action">2017年</li>
-                        <li class="list-group-item list-group-item-action">3.5萬公里</li>
-                        <li class="list-group-item list-group-item-action"><span class="location">高雄市 ｜ </span><a
-                                class="address"
-                                href="https://www.google.com/maps/embed/v1/place?key=AIzaSyDst4YBBQ5SSqNogudbd0LiSyLMwpz77RY&q=台中市南區文心南路616號"
-                                data-fancybox data-type="iframe" data-preload="false" data-width="50%"
-                                data-height="30%">查看地圖</a></li>
-                    </ul>
-                    <div class="card-footer">
-                        <small class="text-muted">75.8萬</small>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col">
-            <a href="">
-                <div class="card h-100 text-center">
-                    <img src="https://img.abccar.com.tw/resize?key=285x190/https://image.abccar.com.tw/carimages/images/aa101177a08ebde32a26184e0a6c4fc4.png"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Skoda Superb 2.0 TSI L&K (Mk3) 2017</h5>
-                        <p class="card-text">絕美SUPERB 空間動力加上超美外觀超殺價錢 慢了絕對買不到
-                        </p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item list-group-item-action">2017年</li>
-                        <li class="list-group-item list-group-item-action">3.5萬公里</li>
-                        <li class="list-group-item list-group-item-action"><span class="location">高雄市 ｜ </span><a
-                                class="address"
-                                href="https://www.google.com/maps/embed/v1/place?key=AIzaSyDst4YBBQ5SSqNogudbd0LiSyLMwpz77RY&q=台中市南區文心南路616號"
-                                data-fancybox data-type="iframe" data-preload="false" data-width="50%"
-                                data-height="30%">查看地圖</a></li>
-                    </ul>
-                    <div class="card-footer">
-                        <small class="text-muted">75.8萬</small>
-                    </div>
-                </div>
-            </a>
-        </div>
     </div>
 </section>
-<div>{{ result }}</div>
-<section class="container">
+<section class="container text-center">
     <nav aria-label="Page navigation example">
         <ul class="pagination">
+
             <li class="page-item">
                 <a class="page-link" href="#" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                     <span class="sr-only">Previous</span>
                 </a>
             </li>
+
             <li class="page-item"><a class="page-link" href="#">1</a></li>
             <li class="page-item"><a class="page-link" href="#">2</a></li>
             <li class="page-item"><a class="page-link" href="#">3</a></li>
+            
             <li class="page-item">
                 <a class="page-link" href="#" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
