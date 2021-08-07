@@ -8,21 +8,21 @@
                 <div class="card h-100 text-center">
                     <img src="{{ result['carPhoto'] }}" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{ result['carBrand'] }} {{ result['carModel'] }}</h5>
-                        <p class="card-text">{{ result['carTitle'] }}</p>
+                        <h5 class="card-title">{{ r['carBrand'] }} {{ r['carModel'] }}</h5>
+                        <p class="card-text">{{ r['carTitle'] }}</p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item list-group-item-action">{{ result['carYear'] }}年</li>
-                        <li class="list-group-item list-group-item-action">{{ round(result['carMileage']/10000,2) }}萬公里
+                        <li class="list-group-item list-group-item-action">{{ r['carYear'] }}年</li>
+                        <li class="list-group-item list-group-item-action">{{ round(r['carMileage']/10000,2) }}萬公里
                         </li>
                         <li class="list-group-item list-group-item-action"><span class="location">{{
-                                result['carAddress'] }} ｜ </span><a class="address"
+                                r['carAddress'] }} ｜ </span><a class="address"
                                 href="https://www.google.com/maps/embed/v1/place?key=AIzaSyDst4YBBQ5SSqNogudbd0LiSyLMwpz77RY&q={{ result['dealerAddress'] }}"
                                 data-fancybox data-type="iframe" data-preload="false" data-width="50%"
                                 data-height="30%">查看地圖</a></li>
                     </ul>
                     <div class="card-footer">
-                        <small class="text-muted">{{ round(result['carPrice']/10000,2) }}萬</small>
+                        <small class="text-muted">{{ round(r['carPrice']/10000,2) }}萬</small>
                     </div>
                 </div>
             </a>

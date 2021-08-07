@@ -36,7 +36,6 @@ def model2result():
         sqltest = 'SELECT * FROM car_list LIMIT 9'
         cursor.execute(sqltest)
         result = cursor.fetchall()
-        print(result)
         car_url = None
 
     return render_template('model2_result.html', result=result, car_url=car_url)
