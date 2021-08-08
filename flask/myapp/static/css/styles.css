@@ -4612,6 +4612,10 @@ fieldset:disabled .btn {
 
 .card-text {
   color: #000;
+  height: 4rem;
+  overflow: auto;
+  font-family: Microsoft JhengHei;
+  font-weight: 400;
 }
 
 .card-text:last-child {
