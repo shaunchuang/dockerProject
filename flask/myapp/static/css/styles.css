@@ -4669,7 +4669,10 @@ fieldset:disabled .btn {
 .card-img,
 .card-img-top,
 .card-img-bottom {
-  width: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: inline-block;
+  width: 30rem;
 }
 
 .card-img,
@@ -11764,4 +11767,18 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 .location {
   color: #000;
+}
+
+.pageblock {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.car-img {
+  height: 15rem;
+}
+
+.bank-img {
+  height: 5rem;
 }

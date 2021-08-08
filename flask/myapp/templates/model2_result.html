@@ -6,7 +6,7 @@
         <div class="col">
             <a href="{{ r['car_url'] }}">
                 <div class="card h-100 text-center">
-                    <img src="{{ r['carPhoto'] }}" class="card-img-top" alt="目前找不到圖片">
+                    <img src="{{ r['carPhoto'] }}" class="card-img-top car-img" alt="目前找不到圖片">
                     <div class="card-body">
                         <h5 class="card-title">{{ r['carBrand'] }} {{ r['carModel'] }}</h5>
                         <p class="card-text">{{ r['carTitle'] }}</p>
@@ -29,7 +29,8 @@
         </div>
         {% endfor %}
     </div>
-
+</section>
+<div class="pageblock">
     <nav aria-label="Page navigation example">
 
         <ul class="pagination">
@@ -102,5 +103,5 @@
         </ul>
 
     </nav>
-</section>
+</div>
 {% endblock %}
