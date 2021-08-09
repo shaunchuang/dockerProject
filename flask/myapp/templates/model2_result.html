@@ -4,28 +4,48 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
         {% for r in result %}
         <div class="col">
+            {% if r['car_url'] != 0 %}
             <a href="{{ r['car_url'] }}">
-                <div class="card h-100 text-center">
-                    <img src="{{ r['carPhoto'] }}" class="card-img-top car-img" alt="目前找不到圖片">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ r['carBrand'] }} {{ r['carModel'] }}</h5>
-                        <p class="card-text">{{ r['carTitle'] }}</p>
+                {% else %}
+                <a href="{{ url_for('model2result', page=page) }}">
+                    {% endif %}
+                    <div class="card h-100 text-center">
+                        <img src="{{ r['carPhoto'] }}" class="card-img-top car-img" alt="此車輛無圖片">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ r['carBrand'] }} {{ r['carModel'] }}</h5>
+                            {% if r['carTitle'] != 0 %}
+                            <p class="card-text">{{ r['carTitle'] }}</p>
+                            {% else %}
+                            <p class="card-text">目前無詳細資訊</p>
+                            {% endif %}
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            {% if r['carYear'] != 0 %}
+                            <li class="list-group-item list-group-item-action">{{ r['carYear'] }}年</li>
+                            {% else %}
+                            <li class="list-group-item list-group-item-action">此車輛無年份資訊</li>
+                            {% endif %}
+                            {% if r['carMileage'] != 0 %}
+                            <li class="list-group-item list-group-item-action">{{ (r['carMileage']/10000)|round(2) }}萬公里
+                            </li>
+                            {% else %}
+                            <li class="list-group-item list-group-item-action">此車輛無里程資訊</li>
+                            {% endif %}
+                            {% if r['carAddress'] != 0 %}
+                            <li class="list-group-item list-group-item-action"><span class="location">{{
+                                    r['carAddress'] }} ｜ </span><a class="address"
+                                    href="https://www.google.com/maps/embed/v1/place?key=AIzaSyDst4YBBQ5SSqNogudbd0LiSyLMwpz77RY&q={{ r['dealerAddress'] }}"
+                                    data-fancybox data-type="iframe" data-preload="false" data-width="50%"
+                                    data-height="30%">查看地圖</a></li>
+                            {% else %}
+                            <li class="list-group-item list-group-item-action">此二手車無地點資訊</li>
+                            {% endif %}
+                        </ul>
+                        <div class="card-footer">
+                            <small class="text-muted">{{ (r['carPrice']/10000)|round(2) }}萬</small>
+                        </div>
                     </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item list-group-item-action">{{ r['carYear'] }}年</li>
-                        <li class="list-group-item list-group-item-action">{{ (r['carMileage']/10000)|round(2) }}萬公里
-                        </li>
-                        <li class="list-group-item list-group-item-action"><span class="location">{{
-                                r['carAddress'] }} ｜ </span><a class="address"
-                                href="https://www.google.com/maps/embed/v1/place?key=AIzaSyDst4YBBQ5SSqNogudbd0LiSyLMwpz77RY&q={{ r['dealerAddress'] }}"
-                                data-fancybox data-type="iframe" data-preload="false" data-width="50%"
-                                data-height="30%">查看地圖</a></li>
-                    </ul>
-                    <div class="card-footer">
-                        <small class="text-muted">{{ (r['carPrice']/10000)|round(2) }}萬</small>
-                    </div>
-                </div>
-            </a>
+                </a>
         </div>
         {% endfor %}
     </div>
