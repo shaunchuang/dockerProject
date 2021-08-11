@@ -18,8 +18,13 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-12">
+                                        {% if price != None %}
                                         <input id="monetary" class="contactus" placeholder="貸款金額(萬)" type="Search"
                                             name="Search" value="{{ price }}">
+                                        {% else %}
+                                        <input id="monetary" class="contactus" placeholder="貸款金額(萬)" type="Search"
+                                        name="Search">
+                                        {% endif %}
                                     </div>
                                     <div class="col-sm-12">
                                         <input id="years" class="contactus" placeholder="貸款期間(年)" type="Search"
@@ -30,7 +35,7 @@
                                         <div style="text-align:center"><input class="find_btn" type="button"
                                                 value="Find Now" onclick="ChangeString()"> </div>
                                         <p style="text-align:center"><span id="NewStringBox"></span></p>
-                                    </a>
+                                        </a>
                                     </div>
                                 </div>
                             </form>

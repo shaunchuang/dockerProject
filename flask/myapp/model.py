@@ -39,18 +39,18 @@ def data_collect(form):
 
     seatMean = 5.014809060839932
     seatStd = 0.8135488623474101
-
-    car_brand = form.car_brand.data
-    car_model = form.car_model.data
-    car_year = form.car_year.data
-    car_mileage = form.car_mileage.data
-    car_color = form.car_color.data
-    car_cylinderVolume = form.car_cylinderVolume.data
-    car_driveMode = form.car_driveMode.data
-    car_gear = form.car_gear.data
-    car_fuel = form.car_fuel.data
-    car_door = form.car_door.data
-    car_seat = form.car_seat.data
+    print(form['car_brand'])
+    car_brand = form['car_brand']
+    car_model = form['car_model']
+    car_year = form['car_year']
+    car_mileage = form['car_mileage']
+    car_color = form['car_color']
+    car_cylinderVolume = form['car_cylinderVolume']
+    car_driveMode = form['car_driveMode']
+    car_gear = form['car_gear']
+    car_fuel = form['car_fuel']
+    car_door = form['car_door']
+    car_seat = form['car_seat']
 
     if car_driveMode == '二輪驅動':
         car_driveMode = 2

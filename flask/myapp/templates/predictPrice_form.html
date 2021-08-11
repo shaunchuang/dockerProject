@@ -1,45 +1,143 @@
 {% extends 'base.html' %}
 {% block content %}
 <!-- bestCar -->
+<style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: sans-serif;
+        text-align: center;
+    }
+
+    p,
+    div,
+    form,
+    section {
+        font-family: serif;
+        font-size: medium;
+    }
+</style>
+
 <section id="contact" class="bestCar">
-   <div id="contact" class="bestCar">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12">
+    <div id="contact" class="bestCar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                </div>
             </div>
-         </div>
-         <div class="row">
-            <div class="col-sm-12">
-               <div class="row">
-                  <div class="col-md-6 offset-md-6">
-                     <form id="predictPrice" action="/usemodel_copy" method="POST">
-
-                        <div class="titlepage">
-                           <h2>Predict Car Price</h2>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-md-6 offset-md-6">
+                            <form style="background: transparent;" action="/predictPrice"
+                                method="POST">
+                                <div class="titlepage">
+                                    <h2 class="forformh2">～ 二手車價預測 ～</h2>
+                                </div>
+                                <div class="row">
+                                    <!--span>{{ error_info }}</span-->
+                                    <div class="col-md-12 forformdiv">
+                                        {% if exe_info != None %}
+                                        <p>{{ exe_info }}</p>
+                                        {% endif %}
+                                        <label class="forlabel" for="car_brand_id">Choose Car Brand</label>
+                                        <select class="forblock" id="car_brand_id" name="car_brand">
+                                            <option selected> -- Choose A Car Make -- </option>
+                                            <option value="Mercedes-Benz">Mercedes-Benz</option>
+                                            <option value="BMW">BMW</option>
+                                            <option value="Toyota">Toyota</option>
+                                            <option value="Ford">Ford</option>
+                                            <option value="Nissan">Nissan</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 forformdiv">
+                                        <label class="forlabel" for="car_model_id">Choose Car Model</label>
+                                        <select class="forblock" id="car_model_id" name="car_model"></select>
+                                    </div>
+                                    <div class="col-md-12 forformdiv">
+                                        <label class="forlabel">車款年份</label>
+                                        <input class="form-control forblock" type="text" name="car_Year"
+                                            placeholder="車款年份">
+                                    </div>
+                                    <div class="col-md-12 forformdiv">
+                                        <label class="forlabel">車款里程</label>
+                                        <input class="form-control forblock" type="text" name="car_mileage"
+                                            placeholder="車款里程">
+                                    </div>
+                                    <div class="col-md-12 forformdiv">
+                                        <label class="forlabel">選擇車款顏色</label>
+                                        <select class="forblock" name="car_color">
+                                            <option selected> -- Choose Color -- </option>
+                                            <option value="黑色">黑色</option>
+                                            <option value="白色">白色</option>
+                                            <option value="藍色">藍色</option>
+                                            <option value="紅色">紅色</option>
+                                            <option value="灰色">灰色</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 forformdiv">
+                                        <label class="forlabel">排氣量</label>
+                                        <input class="form-control forblock" type="text" name="car_cylinderVolume"
+                                            placeholder="排氣量(cc)">
+                                    </div>
+                                    <div class="col-md-12 forformdiv">
+                                        <label class="forlabel">選擇驅動方式</label>
+                                        <select class="forblock" name="car_driveMode">
+                                            <option selected> -- Choose driveMode -- </option>
+                                            <option value="二輪驅動">二輪驅動</option>
+                                            <option value="四輪驅動">四輪驅動</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 forformdiv">
+                                        <label class="forlabel">選擇變速箱形式</label>
+                                        <select class="forblock" name="car_gear">
+                                            <option selected> -- Choose GearType -- </option>
+                                            <option value="手自排">手自排</option>
+                                            <option value="自手排">自手排</option>
+                                            <option value="自排">自排</option>
+                                            <option value="自排">手排</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 forformdiv">
+                                        <label class="forlabel">選擇燃料</label>
+                                        <select class="forblock" name="car_fuel">
+                                            <option selected> -- Choose FuelType -- </option>
+                                            <option value="汽油">汽油</option>
+                                            <option value="柴油">柴油</option>
+                                            <option value="油電">油電</option>
+                                            <option value="純電">純電</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 forformdiv">
+                                        <label class="forlabel" name="car_door">選擇車門數</label>
+                                        <select class="forblock">
+                                            <option selected> -- Choose Number of Doors -- </option>
+                                            <option value="2">2</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-12 forformdiv">
+                                        <label class="forlabel">選擇座位數</label>
+                                        <select class="forblock" name="car_seat">
+                                            <option selected> -- Choose Number of Seats -- </option>
+                                            <option value="2">2</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mb-2 submitButton">開始預測</button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="row">
-                           <div class="col-md-12">
-                              <label for="car_brand_id">Choose Car Brand</label>
-                              <select id="car_brand_id">
-                                 <option selected> -- Choose A Car Make -- </option>
-                                 <option value="Mercedes-Benz">Mercedes-Benz</option>
-                                 <option value="BMW">BMW</option>
-                                 <option value="Toyota">Toyota</option>
-                                 <option value="Ford">Ford</option>
-                                 <option value="Nissan">Nissan</option>
-                              </select>
-                           </div>
-                           <select id="car_model_id"></select>
-
-                        </div>
-
-                     </form>
-                  </div>
-               </div>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-   </div>
+        </div>
+    </div>
 </section>
 <script src="{{ url_for('static', filename='js/model1form.js') }}"></script>
 {% endblock %}

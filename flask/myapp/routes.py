@@ -17,15 +17,20 @@ def index():
 def predictPrice():
     car_brand = ['Aston Martin', 'Audi', 'Bentley', 'BMW', 'Citroen', 'Ferrari', 'Ford', 'Hyundai', 'Infiniti', 'Jaguar', 'Kia', 'Lamborghini', 'Land Rover', 'Lexus', 'Lotus', 'Mercedes-Benz', 'Mahindra',
                  'Maserati', 'Mazda', 'McLaren', 'Mini', 'Mitsubishi', 'Morgan', 'Nissan', 'Peugeot', 'Porsche', 'Rolls-Royce', 'Skoda', 'Ssangyong', 'Subaru', 'Suzuki', 'Tesla', 'Toyota', 'Volkswagen', 'Volvo']
-    form = None
+    # try:
     if request.method == 'POST':
         form = request.form
-        # input = data_collect(form)
-        # result = predict(input)
-        # result = result_compute(result)
+        print(form)
+        input = data_collect(form)
+        result = predict(input)
+        result = result_compute(result)
         return render_template('predictPrice_result.html', form=form, car_brand=car_brand)
-
-    return render_template('predictPrice_form.html', form=form, car_brand=car_brand)
+    # except:
+    #     exe_info='輸入格式錯誤請重新輸入'
+    #     return render_template('predictPrice_form.html',exe_info=exe_info, car_brand=car_brand)
+    # finally:
+    #     return render_template('predictPrice_form.html', car_brand=car_brand)
+    return render_template('predictPrice_form.html',car_brand=car_brand)
 
 
 @app.route('/loan')

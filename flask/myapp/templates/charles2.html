@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- bestCar -->
+<section id="contact" class="bestCar">
+   <div id="contact" class="bestCar">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="row">
+                  <div class="col-md-6 offset-md-6">
+                     <form id="predictPrice" action="/usemodel_copy" method="POST">
+
+                        <div class="titlepage">
+                           <h2>Predict Car Price</h2>
+                        </div>
+                        <div class="row">
+                           <div class="col-md-12">
+                              <label for="car_brand_id">Choose Car Brand</label>
+                              <select id="car_brand_id">
+                                 <option selected> -- Choose A Car Make -- </option>
+                                 <option value="Mercedes-Benz">Mercedes-Benz</option>
+                                 <option value="BMW">BMW</option>
+                                 <option value="Toyota">Toyota</option>
+                                 <option value="Ford">Ford</option>
+                                 <option value="Nissan">Nissan</option>
+                              </select>
+                           </div>
+                           <div class="col-md-12">
+                           <select id="car_model_id"></select>
+                        </div>
+                        </div>
+
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<script src="{{ url_for('static', filename='js/model1form.js') }}"></script>
+{% endblock %}

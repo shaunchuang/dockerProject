@@ -11786,3 +11786,40 @@ section#contact form#contactForm :-ms-input-placeholder {
 .bank-img {
   height: 5rem;
 }
+
+
+.forformdiv {
+  background-color:#DCDCDC; 
+  border-radius: 1rem; 
+  color:black; 
+  font-size:large; 
+  margin: 1rem; 
+  padding: 1rem;
+}
+
+.forblock {
+  padding-left: 1.5rem;
+}
+
+.forlabel{
+  font-size:large;
+   padding-left: 1.5rem;
+}
+
+.submitButton{
+  border-radius: 1rem;
+  color: black;
+  font-size: large;
+  margin: 1rem;
+  padding: 2rem;
+
+}
+
+.forformh2{
+  color:#FFFFF0; 
+  font-size: 1.5rem; 
+  padding-top: 1.8rem; 
+  font-weight: bold;
+  font-family: Microsoft JhengHei;
+  text-align: center;
+}
