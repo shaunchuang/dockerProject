@@ -1,7 +1,7 @@
+import re
 from myapp import app
-from myapp.forms import UseModelForm
 from flask import render_template, request
-from myapp.model import predict, data_Collect, resultcompute
+from myapp.model import predict, data_collect, result_compute
 from myapp.mysql_model import create_url
 from myapp.init_conn import connection
 import math
@@ -13,18 +13,19 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/usemodel', methods=['GET', 'POST'])
+@app.route('/usemodel_copy.html', methods=['GET', 'POST'])
 def usemodel():
-    error_info = None
-    form = UseModelForm()
-    if form.validate_on_submit():
-        input = data_Collect(form)
-        result = predict(input)
-        result = resultcompute(result)
-        return render_template('usemodel_result.html', result=result, form=form)
-    else:
-        error_info = '輸入格式錯誤請重新輸入'
-        return render_template('usemodel.html', form=form, error_info=error_info)
+    car_brand = ['Aston Martin', 'Audi', 'Bentley', 'BMW', 'Citroen', 'Ferrari', 'Ford', 'Hyundai', 'Infiniti', 'Jaguar', 'Kia', 'Lamborghini', 'Land Rover', 'Lexus', 'Lotus', 'Mercedes-Benz', 'Mahindra',
+                 'Maserati', 'Mazda', 'McLaren', 'Mini', 'Mitsubishi', 'Morgan', 'Nissan', 'Peugeot', 'Porsche', 'Rolls-Royce', 'Skoda', 'Ssangyong', 'Subaru', 'Suzuki', 'Tesla', 'Toyota', 'Volkswagen', 'Volvo']
+    form = None
+    if request.method == 'POST':
+        form = request.form
+        # input = data_collect(form)
+        # result = predict(input)
+        # result = result_compute(result)
+        return render_template('usemodel_result_copy.html', form=form, car_brand=car_brand)
+
+    return render_template('usemodel_copy.html', form=form, car_brand=car_brand)
 
 
 @app.route('/loan')
@@ -35,26 +36,29 @@ def loan():
 @app.route('/model2result')
 def model2result():
 
-    cr = connection.cursor()
-    sqlrows = 'SELECT COUNT(*) AS items FROM car_list where segment=1'
-    cr.execute(sqlrows)
-    rows = cr.fetchone()
-    page = request.args.get('page', 1, type=int)
-    items = rows['items']
-    totalpages = math.ceil(items/9)
-    limit = 9
+    page = request.args.get('page', 1, type=int)  # init page=1
 
-    if page < totalpages:
+    cr = connection.cursor()    # init cursor
+    sqlrows = 'SELECT COUNT(*) AS items FROM car_list WHERE segment=1'
+    cr.execute(sqlrows)    # execute sql query
+    rows = cr.fetchone()    # get sql result
+    items = rows['items']    # to get total items
+    total_pages = math.ceil(items/9)   # get total pages
+    limit = 9   # limited 9 items in one page
+
+    if page < total_pages:    # user's page < totalpages then offset -> user's page
         offset = page*limit - limit
-    if page > totalpages:
-        offset = totalpages*limit - limit
+    else:
+        # user's page >= totalpages then offest -> total page
+        offset = total_pages*limit - limit
 
-    cur = connection.cursor()
-    sqltest = f'SELECT * FROM car_list where segment=1 LIMIT {limit} OFFSET {offset}'
-    cur.execute(sqltest)
-    result = cur.fetchall()
+    cur = connection.cursor()    # init cursor
+    # from offset value to query 9 items
+    sqltest = f'SELECT * FROM car_list WHERE segment=1 LIMIT {limit} OFFSET {offset}'
+    cur.execute(sqltest)    # execute sql query
+    result = cur.fetchall()  # get sql result
 
     for r in result:
-        r['car_url'] = create_url(r)
+        r['car_url'] = create_url(r)    # create car link from defined function
 
-    return render_template('model2_result.html', result=result, page=page, totalpages=totalpages)
+    return render_template('model2_result.html', result=result, page=page, totalpages=total_pages)

@@ -16,7 +16,7 @@
                             {% if r['carTitle'] != 0 %}
                             <p class="card-text">{{ r['carTitle'] }}</p>
                             {% else %}
-                            <p class="card-text">目前無詳細資訊</p>
+                            <p class="card-text">此車輛無詳細描述資訊，點擊以獲得更多資訊</p>
                             {% endif %}
                         </div>
                         <ul class="list-group list-group-flush">
@@ -38,11 +38,15 @@
                                     data-fancybox data-type="iframe" data-preload="false" data-width="50%"
                                     data-height="30%">查看地圖</a></li>
                             {% else %}
-                            <li class="list-group-item list-group-item-action">此二手車無地點資訊</li>
+                            <li class="list-group-item list-group-item-action">此車輛無地點資訊</li>
                             {% endif %}
                         </ul>
                         <div class="card-footer">
-                            <small class="text-muted">{{ (r['carPrice']/10000)|round(2) }}萬</small>
+                            {% if r['carPrice'] != 0 %}
+                            <small class="text-muted">{{ (r['carPrice']/10000)|round(2) }}萬</small> | <a class="address" href="{{ url_for('loan') }}">貸款試算</a>
+                            {% else %}
+                            <small class="text-muted">此車輛無價格資訊</small>
+                            {% endif %}
                         </div>
                     </div>
                 </a>

@@ -3,7 +3,7 @@ import pickle
 import gzip
 import numpy as np
 import pandas as pd
-from sklearn import preprocessing
+import sklearn
 import re
 
 
@@ -20,7 +20,7 @@ def myscale(mydata, dfmean, dfstd):
     return (mydata - dfmean)/dfstd
 
 
-def data_Collect(form):
+def data_collect(form):
 
     yearMean = 2013.3474867194548
     yearStd = 0.7034532944922058
@@ -72,21 +72,25 @@ def data_Collect(form):
 
     df1 = pd.read_csv('./myapp/csv/testcolumn.csv',
                       encoding='utf8', index_col=0)
+    
     df2 = pd.DataFrame(columns=df1.columns)
-    array = np.array([1, 1, int(car_year), int(car_mileage), 1, int(
-        car_cylinderVolume), car_driveMode, 1, 1, car_door, car_seat, 0])
+
+    array = np.array([1, 1, car_year, car_mileage, 1, 
+        car_cylinderVolume, car_driveMode, 1, 1, car_door, car_seat, 0])
+    
     input = pd.DataFrame([array], columns=['car_brand_'+car_brand, 'car_model_'+car_model, 'car_year', 'car_mileage', 'car_color_' +
                          car_color, 'car_cylinderVolume', 'car_driveMode', 'car_gear_'+car_gear, 'car_fuel_'+car_fuel, 'car_door', 'car_seat', 'verified'])
     input = pd.concat([df2, input], join='outer', ignore_index=True)
+
     input = input.fillna(0)
 
     return input
 
 
-def resultcompute(result):
-    rmse = 0.001
-    result1 = result - rmse
-    result2 = result + rmse
+def result_compute(result):
+    
+    result1 = result - result*0.05
+    result2 = result + result*0.05
     result1 = round(math.exp(result1), 2)
     result2 = round(math.exp(result2), 2)
     return {'set1': result1, 'set2': result2}
