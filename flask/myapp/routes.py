@@ -13,8 +13,8 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/usemodel_copy.html', methods=['GET', 'POST'])
-def usemodel():
+@app.route('/predictPrice', methods=['GET', 'POST'])
+def predictPrice():
     car_brand = ['Aston Martin', 'Audi', 'Bentley', 'BMW', 'Citroen', 'Ferrari', 'Ford', 'Hyundai', 'Infiniti', 'Jaguar', 'Kia', 'Lamborghini', 'Land Rover', 'Lexus', 'Lotus', 'Mercedes-Benz', 'Mahindra',
                  'Maserati', 'Mazda', 'McLaren', 'Mini', 'Mitsubishi', 'Morgan', 'Nissan', 'Peugeot', 'Porsche', 'Rolls-Royce', 'Skoda', 'Ssangyong', 'Subaru', 'Suzuki', 'Tesla', 'Toyota', 'Volkswagen', 'Volvo']
     form = None
@@ -23,18 +23,19 @@ def usemodel():
         # input = data_collect(form)
         # result = predict(input)
         # result = result_compute(result)
-        return render_template('usemodel_result_copy.html', form=form, car_brand=car_brand)
+        return render_template('predictPrice_result.html', form=form, car_brand=car_brand)
 
-    return render_template('usemodel_copy.html', form=form, car_brand=car_brand)
+    return render_template('predictPrice_form.html', form=form, car_brand=car_brand)
 
 
 @app.route('/loan')
 def loan():
-    return render_template('loan.html')
+    price = request.args.get('price', type=float)
+    return render_template('loan.html', price=price)
 
 
-@app.route('/model2result')
-def model2result():
+@app.route('/bestCarResult')
+def bestCar():
 
     page = request.args.get('page', 1, type=int)  # init page=1
 
@@ -61,4 +62,4 @@ def model2result():
     for r in result:
         r['car_url'] = create_url(r)    # create car link from defined function
 
-    return render_template('model2_result.html', result=result, page=page, totalpages=total_pages)
+    return render_template('bestCar_result.html', result=result, page=page, totalpages=total_pages)
