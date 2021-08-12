@@ -20,11 +20,12 @@ def predictPrice():
     # try:
     if request.method == 'POST':
         form = request.form
-        print(form)
+        form = dict(form)
         input = data_collect(form)
         result = predict(input)
         result = result_compute(result)
-        return render_template('predictPrice_result.html', form=form, car_brand=car_brand)
+        print(result)
+        return render_template('predictPrice_result.html', form=form, car_brand=car_brand, result=result)
     # except:
     #     exe_info='輸入格式錯誤請重新輸入'
     #     return render_template('predictPrice_form.html',exe_info=exe_info, car_brand=car_brand)
@@ -38,9 +39,12 @@ def loan():
     price = request.args.get('price', type=float)
     return render_template('loan.html', price=price)
 
+@app.route('/bestCarForm')
+def bestCarForm():
+    return render_template('bestCar_form.html')
 
 @app.route('/bestCarResult')
-def bestCar():
+def bestCarResult():
 
     page = request.args.get('page', 1, type=int)  # init page=1
 

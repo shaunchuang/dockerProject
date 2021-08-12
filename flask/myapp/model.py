@@ -7,6 +7,16 @@ import sklearn
 import re
 
 
+def check_type(form):
+    car_year = form['car_year']
+    car_mileage = form['car_mileage']
+    car_cylinderVolume = form['car_cylinderVolume']
+
+    if car_year.isdecimal() and car_mileage.isdecimal() and car_cylinderVolume.isdecimal():
+        return True
+    else:
+        return False
+
 with gzip.open('myapp/model/randomforestRegressor.pgz', 'r') as f:
     rf_r = pickle.load(f)
 
@@ -39,7 +49,7 @@ def data_collect(form):
 
     seatMean = 5.014809060839932
     seatStd = 0.8135488623474101
-    print(form['car_brand'])
+
     car_brand = form['car_brand']
     car_model = form['car_model']
     car_year = form['car_year']
@@ -51,6 +61,14 @@ def data_collect(form):
     car_fuel = form['car_fuel']
     car_door = form['car_door']
     car_seat = form['car_seat']
+
+    if car_brand == 'Mercedes-Benz':
+        car_brand = 'BENZ'
+    if car_brand == 'Volkswagen':
+        car_brand = 'VW'
+    
+    car_model = car_model.upper()
+    car_brand = car_brand.upper()
 
     if car_driveMode == '二輪驅動':
         car_driveMode = 2
@@ -65,16 +83,14 @@ def data_collect(form):
     car_door = myscale(float(car_door), doorMean, doorStd)
     car_seat = myscale(float(car_seat), seatMean, seatStd)
 
-    car_door = np.array([car_door])
-    car_seat = np.array([car_seat])
+    # car_door = np.array([car_door])
+    # car_seat = np.array([car_seat])
 
     car_color = re.sub(r'色$', '', car_color)
 
     df1 = pd.read_csv('./myapp/csv/testcolumn.csv',
                       encoding='utf8', index_col=0)
-    
     df2 = pd.DataFrame(columns=df1.columns)
-
     array = np.array([1, 1, car_year, car_mileage, 1, 
         car_cylinderVolume, car_driveMode, 1, 1, car_door, car_seat, 0])
     
@@ -88,9 +104,8 @@ def data_collect(form):
 
 
 def result_compute(result):
-    
     result1 = result - result*0.05
     result2 = result + result*0.05
-    result1 = round(math.exp(result1), 2)
-    result2 = round(math.exp(result2), 2)
+    result1 = round(math.exp(result1)/10000, 1)
+    result2 = round(math.exp(result2)/10000, 1)
     return {'set1': result1, 'set2': result2}
