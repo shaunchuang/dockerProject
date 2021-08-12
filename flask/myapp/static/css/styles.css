@@ -11823,3 +11823,38 @@ section#contact form#contactForm :-ms-input-placeholder {
   font-family: Microsoft JhengHei;
   text-align: center;
 }
+
+.price_button1 {
+  margin: 0px 0px 0px 100px;
+}
+.price_button2 {
+  margin: 0px 0px 0px 90px;
+}
+
+.background1 {
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+}
+.color1 {
+  color: #28004d;
+  background-color: rgba(39, 126, 118, 0.7);
+}
+
+.font1 p{
+  font-size: 1.7rem;
+  font-family: "Noto Sans TC", sans-serif;
+  font-weight: bold;
+  color: #28004d;
+  text-align: center;
+}
+.price1 {
+  color: #28004d;
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: underline;
+  text-align: center;
+}
+.price2 {
+  color: #1e6e6e;
+  font-size: 1.5rem;
+}

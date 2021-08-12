@@ -2,7 +2,7 @@
 {% block content %}
 <!-- bestCar -->
 <section id="contact" class="bestCar">
-   <div id="contact" class="bestCar">
+   <div>
       <div class="container">
          <div class="row">
             <div class="col-md-12">
@@ -14,10 +14,18 @@
                   <div class="col-md-6 offset-md-6">
                      <h4 class="multi">Evaluate Result<h4>
                            <div class="multi">
-                              <p>{{ form.car_brand }}{{ form.car_brand }}</p>
-                              <p>{{ form.car_model }}{{ form.car_model }}</p>
+                              <p>{{ form.car_brand }}{{ form.car_model }}</p>
+                              <p>{{ form.car_model }}</p>
+                              <p>{{ form.car_year}}</p>
+                              <p>{{ form.car_mileage}}</p>
                            </div>
                            <p>{{ result['set1'] }} ~ {{ result['set2'] }}萬</p>
+                           <div>
+                              <a href="{{ url_for('index'}}" class="btn btn-primary btn-lg active color1 price_button1" role="button"
+                                 aria-pressed="true">回首頁</a>
+                              <a href="{{ url_for('bestCarForm')}}" class="btn btn-primary btn-lg active color1 price_button2" role="button"
+                                 aria-pressed="true">前往車輛推薦</a>
+                           </div>
                   </div>
                </div>
             </div>

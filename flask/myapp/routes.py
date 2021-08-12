@@ -1,6 +1,8 @@
 import re
+
+from flask.helpers import url_for
 from myapp import app
-from flask import render_template, request
+from flask import render_template, request, redirect
 from myapp.model import predict, data_collect, result_compute
 from myapp.mysql_model import create_url
 from myapp.init_conn import connection
@@ -39,8 +41,11 @@ def loan():
     price = request.args.get('price', type=float)
     return render_template('loan.html', price=price)
 
-@app.route('/bestCarForm')
+@app.route('/bestCarForm',  methods=['GET', 'POST'])
 def bestCarForm():
+    if request.method == 'POST':
+        form = dict(request.form)
+        return redirect(url_for('bestCarResult'))
     return render_template('bestCar_form.html')
 
 @app.route('/bestCarResult')

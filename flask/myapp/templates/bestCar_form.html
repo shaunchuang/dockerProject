@@ -252,7 +252,7 @@
                             <p>每個人都值得一台量身打造的車子</p>
                             <div class="row">
                                 <div class="col-md-12 mx-0">
-                                    <form id="msform">
+                                    <form id="msform" action="/bestCarForm" method="POST">
                                         <!-- progressbar -->
                                         <ul id="progressbar">
                                             <li class="active" id="account"><strong>品牌偏好</strong></li>
@@ -264,48 +264,35 @@
                                             <div class="form-card">
                                                 <h2 class="fs-title">品牌偏好</h2>
                                                 <div class="form-check">
-                                                    <input class="radio" type="radio" name="exampleRadios" id="brand1" value="option1" checked>
-                                                    <label class="radio" for="brand1">
-                                                      國產
-                                                    </label>
+                                                    <input class="radio" type="radio" name="brand" id="brand1" value="國產">
+                                                    <label class="radio" for="brand1">國產</label>
                                                   </div>
                                                   <div class="form-check">
-                                                    <input class="radio" type="radio" name="exampleRadios" id="brand2" value="option2">
-                                                    <label class="radio" for="brand2">
-                                                      入門進口
-                                                    </label>
+                                                    <input class="radio" type="radio" name="brand" id="brand2" value="入門進口">
+                                                    <label class="radio" for="brand2">進口一般品牌</label>
                                                   </div>
                                                   <div class="form-check">
-                                                    <input class="radio" type="radio" name="exampleRadios" id="brand3" value="option3" disabled>
-                                                    <label class="radio" for="brand3">
-                                                      高級進口
-                                                    </label>
+                                                    <input class="radio" type="radio" name="brand" id="brand3" value="高級進口">
+                                                    <label class="radio" for="brand3">進口豪華品牌</label>
                                                   </div>
                                             </div>
 
-                                            <input type="button" name="next" class="next action-button"
-                                                value="Next Step" />
+                                            <input type="button" name="next" class="next action-button" value="Next Step">
                                         </fieldset>
                                         <fieldset>
                                             <div class="form-card">
                                                 <h2 class="fs-title">年份</h2> 
                                                 <div class="form-check">
-                                                    <input class="radio" type="radio" name="exampleRadios" id="year1" value="option1" checked>
-                                                    <label class="radio" for="year1">
-                                                      5年內
-                                                    </label>
+                                                    <input class="radio" type="radio" name="cyear" id="year1" value="5">
+                                                    <label class="radio" for="year1">5年內</label>
                                                   </div>
                                                   <div class="form-check">
-                                                    <input class="radio" type="radio" name="exampleRadios" id="year2" value="option2">
-                                                    <label class="radio" for="year2">
-                                                      5~10年
-                                                    </label>
+                                                    <input class="radio" type="radio" name="cyear" id="year2" value="510">
+                                                    <label class="radio" for="year2">5~10年</label>
                                                   </div>
                                                   <div class="form-check">
-                                                    <input class="radio" type="radio" name="exampleRadios" id="year3" value="option3" disabled>
-                                                    <label class="radio" for="year3">
-                                                      10年以上
-                                                    </label>
+                                                    <input class="radio" type="radio" name="cyear" id="year3" value="10">
+                                                    <label class="radio" for="year3">10年以上</label>
                                                   </div>
                                             </div> <input type="button" name="previous"
                                                 class="previous action-button-previous" value="Previous"> <input
@@ -315,27 +302,20 @@
                                             <div class="form-card">
                                                 <h2 class="fs-title">用途</h2>
                                                 <div class="form-check">
-                                                    <input class="radio" type="radio" name="exampleRadios" id="func1" value="option1" checked>
-                                                    <label class="radio" for="func1">
-                                                      一般用途
-                                                    </label>
+                                                    <input class="radio" type="radio" name="func" id="func1" value="normal">
+                                                    <label class="radio" for="func1">一般用途</label>
                                                   </div>
                                                   <div class="form-check">
-                                                    <input class="radio" type="radio" name="exampleRadios" id="func2" value="option2">
-                                                    <label class="radio" for="func2">
-                                                      耍帥耍酷
-                                                    </label>
+                                                    <input class="radio" type="radio" name="func" id="func2" value="sport">
+                                                    <label class="radio" for="func2">耍帥耍酷</label>
                                                   </div>
                                                   <div class="form-check">
-                                                    <input class="radio" type="radio" name="exampleRadios" id="func3" value="option3" disabled>
-                                                    <label class="radio" for="func3">
-                                                      商務載貨
-                                                    </label>
+                                                    <input class="radio" type="radio" name="func" id="func3" value="cargo">
+                                                    <label class="radio" for="func3">商務載貨</label>
                                                   </div>
-                                            </div> <input type="button" name="previous"
-                                                class="previous action-button-previous" value="Previous" /> <input
-                                                type="button" name="make_payment" class="next action-button"
-                                                value="Confirm" />
+                                            </div> 
+                                            <input type="button" name="previous"class="previous action-button-previous" value="Previous"> 
+                                            <input type="submit" name="make_payment" class="next action-button" value="Confirm">
                                         </fieldset>
 
                                     </form>

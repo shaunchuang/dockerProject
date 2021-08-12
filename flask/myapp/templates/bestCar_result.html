@@ -7,7 +7,7 @@
             {% if r['car_url'] != 0 %}
             <a href="{{ r['car_url'] }}">
                 {% else %}
-                <a href="{{ url_for('bestCar', page=page) }}">
+                <a href="{{ url_for('bestCarResult', page=page) }}">
                     {% endif %}
                     <div class="card h-100 text-center">
                         <img src="{{ r['carPhoto'] }}" class="card-img-top car-img" alt="此車輛無圖片">
