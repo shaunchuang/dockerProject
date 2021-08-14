@@ -304,6 +304,8 @@
         <div>
             <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg active color1 price_button1" role="button"
                aria-pressed="true">回首頁</a>
+            <a href="{{ url_for('bestCarResult', page=page, brand=brand, year=year, mileage=mileage) }}" class="btn btn-primary btn-lg active color1 price_button1" role="button"
+               aria-pressed="true">回到選車結果</a>
             <a href="{{ url_for('bestCarForm')}}" class="btn btn-primary btn-lg active color1 price_button2" role="button"
                aria-pressed="true">前往車輛推薦</a>
          </div>
