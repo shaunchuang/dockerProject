@@ -45,6 +45,7 @@ def loan():
 
 @app.route('/bestCarForm',  methods=['GET', 'POST'])
 def bestCarForm():
+    exec_info = None
     if request.method == 'POST':
         try:
             form = dict(request.form)
@@ -53,8 +54,9 @@ def bestCarForm():
             ckm = form['km']
             return redirect(url_for('bestCarResult', brand=cbrand, year=cyear, mileage=ckm))
         except:
-            return render_template('bestCar_form.html')
-    return render_template('bestCar_form.html')
+            exec_info = '資料出現錯誤請重新選擇'
+            return render_template('bestCar_form.html',exec_info=exec_info)
+    return render_template('bestCar_form.html', exec_info)
 
 
 @app.route('/bestCarResult')
