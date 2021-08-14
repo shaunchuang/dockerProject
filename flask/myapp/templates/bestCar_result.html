@@ -4,7 +4,7 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
         {% for r in result %}
         <div class="col">
-            {% if r['car_url'] != 0 %}
+            {% if r['car_url'] != '0' %}
             <a href="{{ r['car_url'] }}">
                 {% else %}
                 <a href="{{ url_for('bestCarResult', page=page,  brand=brand, year=year, mileage=mileage) }}">
@@ -13,7 +13,7 @@
                         <img src="{{ r['carPhoto'] }}" class="card-img-top car-img" alt="此車輛無圖片">
                         <div class="card-body">
                             <h5 class="card-title">{{ r['carBrand'] }} {{ r['carModel'] }}</h5>
-                            {% if r['carTitle'] != 0 %}
+                            {% if r['carTitle'] != '0' %}
                             <p class="card-text">{{ r['carTitle'] }}</p>
                             {% else %}
                             <p class="card-text">此車輛無詳細描述資訊，點擊以獲得更多資訊</p>
@@ -31,7 +31,7 @@
                             {% else %}
                             <li class="list-group-item list-group-item-action">此車輛無里程資訊</li>
                             {% endif %}
-                            {% if r['carAddress'] != 0 %}
+                            {% if r['carAddress'] != '0' %}
                             <li class="list-group-item list-group-item-action"><span class="location">{{
                                     r['carAddress'] }} ｜ </span><a class="address"
                                     href="https://www.google.com/maps/embed/v1/place?key=AIzaSyDst4YBBQ5SSqNogudbd0LiSyLMwpz77RY&q={{ r['dealerAddress'] }}"
