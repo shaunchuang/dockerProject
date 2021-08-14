@@ -69,7 +69,7 @@ def bestCarResult():
     if cbrand == 'normal':
         brandsql = 'carBrand="TOYOTA" or carBrand="FORD" or carBrand="HONDA" or carBrand="NISSAN" or carBrand="MITSUBISHI" or carBrand="MAZADA" or carBrand="LUXGEN" or carBrand="HYUNDAI" or carBrand="KIA"'
     if cbrand == 'advanced':
-        brandsql = 'carBrand="SKODA" or carBrand="SUZUKI" or carBrand="SUBARU" or carBrand="VOLKSWAGEN" or carBrand="PEUGEOT" or carBrand="CITROEN" or carBrand="RENAULT or carBrand="OPEL"'
+        brandsql = 'carBrand="SKODA" or carBrand="SUZUKI" or carBrand="SUBARU" or carBrand="VOLKSWAGEN" or carBrand="PEUGEOT" or carBrand="CITROEN" or carBrand="RENAULT" or carBrand="OPEL"'
     if cbrand == 'luxury':
         brandsql = 'carBrand="LEXUS" or carBrand="INFINITI" or carBrand="JAGUAR" or carBrand="TESLA" or carBrand="VOLVO" or carBrand="BENZ" or carBrand="BMW" or carBrand="AUDI" or carBrand="PORSCHE" or carBrand="MASERATI" or carBrand="MCLAREN" or carBrand="FERRARI" or carBrand="LAMBORGHINI"'
 
@@ -106,7 +106,7 @@ def bestCarResult():
 
     cur = connection.cursor()   # init cursor
     # from offset value to query 9 items
-    sqltest = f'SELECT * FROM car_list WHERE ({brandsql}) and ({yearsql}) and ({kmsql}) LIMIT {limit} OFFSET {offset}'
+    sqltest = f'SELECT * FROM car_list WHERE ({brandsql}) and ({yearsql}) and ({kmsql}) ORDER BY carYear DESC, carMileage ASC LIMIT {limit} OFFSET {offset}'
     cur.execute(sqltest)        # execute sql query
     result = cur.fetchall()     # get sql result
 
