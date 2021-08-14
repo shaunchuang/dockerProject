@@ -57,11 +57,11 @@
         {% endfor %}
     </div>
     <div class="col-md-12">
-        <div style="text-align: right; margin: 2% auto 1% auto;">目前為第{{ page }}頁，共 {{ totalpages }} 頁，{{ items }} 輛車</div>
+        <div style="text-align: right; margin: 1.5rem auto 1rem auto;">目前為第{{ page }}頁，共 {{ totalpages }} 頁，{{ items }} 輛車
+        </div>
     </div>
-    <div class="col-md-12">
-        <nav aria-label="Page navigation example">
-
+    <div class="col-md-12 navbar-collapse-center">
+        <nav class="navbar-center" aria-label="Page navigation example">
             <ul class="pagination">
                 {% if page == 1 %}
                 <li class="page-item">

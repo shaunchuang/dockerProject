@@ -11862,3 +11862,14 @@ section#contact form#contactForm :-ms-input-placeholder {
 .forlink{
   border: #000 0.1rem solid;
 }
+
+.navbar-center {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+
+.navbar-collapse-center {
+  text-align: center;
+}
