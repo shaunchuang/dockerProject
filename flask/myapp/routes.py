@@ -56,7 +56,7 @@ def bestCarForm():
         except:
             exec_info = '資料出現錯誤請重新選擇'
             return render_template('bestCar_form.html',exec_info=exec_info)
-    return render_template('bestCar_form.html', exec_info)
+    return render_template('bestCar_form.html', exec_info=exec_info)
 
 
 @app.route('/bestCarResult')
