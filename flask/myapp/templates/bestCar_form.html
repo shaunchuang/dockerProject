@@ -15,7 +15,7 @@
         }
 
         #grad1 {
-            background: rgba(0, 255, 204, 0.2);
+            background: rgba(61, 58, 58, 0.2);
         }
 
         #msform {
@@ -68,7 +68,7 @@
             box-sizing: border-box;
             font-family: montserrat;
             color: #2C3E50;
-            font-size: 16px;
+            font-size: 1rem;
             letter-spacing: 1px
         }
 
@@ -164,7 +164,7 @@
 
         #progressbar #account:before {
             font-family: FontAwesome;
-            content: "\fb19"
+            content: "\f1b9"
         }
 
         #progressbar #personal:before {
@@ -235,6 +235,11 @@
             width: 100%;
             object-fit: cover
         }
+
+        .title-form{
+            color:antiquewhite;
+
+        }
     </style>
     <div id="contact" class="bestCar">
         <div class="container">
@@ -242,8 +247,8 @@
                 <div class="row justify-content-center mt-0">
                     <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
                         <div class="card1 px-0 pt-4 pb-0 mt-3 mb-3">
-                            <h2><strong>速配愛車</strong></h2>
-                            <p>每個人都值得一台量身打造的車子</p>
+                            <h2><strong class="title-form">速配愛車</strong></h2>
+                            <h6 class="title-form">每個人都值得一台量身打造的車子</h6>
                             <div class="row">
                                 <div class="col-md-12 mx-0">
                                     <form id="msform" action="/bestCarForm" method="POST">
@@ -251,7 +256,7 @@
                                         <ul id="progressbar">
                                             <li class="active" id="account"><strong>品牌偏好</strong></li>
                                             <li id="personal"><strong>年份</strong></li>
-                                            <li id="payment"><strong>用途</strong></li>
+                                            <li id="payment"><strong>里程</strong></li>
                                             <li id="confirm"><strong>Finish</strong></li>
                                         </ul> <!-- fieldsets -->
                                         <fieldset>
