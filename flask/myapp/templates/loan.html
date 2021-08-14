@@ -16,7 +16,7 @@
                                     <h2>Find the Best Loan</h2>
                                     <p>每月信貸本息平均攤還月付金式算</p>
                                 </div>
-                                <div class="row">
+                                <div class="row" id="loanagain">
                                     <div class="col-sm-12">
                                         {% if price != None %}
                                         <input id="monetary" class="contactus" placeholder="貸款金額(萬)" type="Search"
@@ -302,11 +302,13 @@
             </div>
         </div>
         <div class="pageblock">
-            <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg active color1 price_button1" role="button"
+            <a href="{{ url_for('index') }}" class="btn btn-primary btn-lg active" role="button"
                aria-pressed="true">回首頁</a>
-            <a href="javascript:history.back()" class="btn btn-primary btn-lg active color1 price_button1" role="button"
+            <a href="#loanagain" class="btn btn-primary btn-lg active color1 price_button2" role="button"
+               aria-pressed="true">重新試算</a>
+            <a href="javascript:history.back()" class="btn btn-primary btn-lg active" role="button"
                aria-pressed="true">回到選車結果</a>
-            <a href="{{ url_for('bestCarForm')}}" class="btn btn-primary btn-lg active color1 price_button2" role="button"
+            <a href="{{ url_for('bestCarForm')}}" class="btn btn-primary btn-lg active" role="button"
                aria-pressed="true">前往車輛推薦</a>
          </div>
     </div>
