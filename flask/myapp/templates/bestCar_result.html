@@ -21,12 +21,12 @@
                         </div>
                         <ul class="list-group list-group-flush">
                             {% if r['carYear'] != 0 %}
-                            <li class="list-group-item list-group-item-action">{{ r['carYear'] }}年</li>
+                            <li class="list-group-item list-group-item-action">年份：{{ r['carYear'] }}年</li>
                             {% else %}
                             <li class="list-group-item list-group-item-action">此車輛無年份資訊</li>
                             {% endif %}
                             {% if r['carMileage'] != 0 %}
-                            <li class="list-group-item list-group-item-action">{{ (r['carMileage']/10000)|round(2) }}萬公里
+                            <li class="list-group-item list-group-item-action">里程：{{ (r['carMileage']/10000)|round(2) }}萬公里
                             </li>
                             {% else %}
                             <li class="list-group-item list-group-item-action">此車輛無里程資訊</li>
@@ -43,7 +43,7 @@
                         </ul>
                         <div class="card-footer">
                             {% if r['carPrice'] != 0 %}
-                            <small class="text-muted">{{ (r['carPrice']/10000)|round(2) }}萬</small><span class="location"> | </span><a class="address" href="{{ url_for('loan', price=((r['carPrice']/10000)|round(2))) }}">貸款試算</a>
+                            <small class="text-muted">{{ (r['carPrice']/10000)|round(2) }}萬</small><span class="location">  |  </span><a class="address" href="{{ url_for('loan', price=((r['carPrice']/10000)|round(2))) }}">貸款試算</a>
                             {% else %}
                             <small class="text-muted">此車輛無價格資訊</small>
                             {% endif %}

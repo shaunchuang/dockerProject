@@ -24,8 +24,11 @@ def predictPrice():
         input = data_collect(form)
         result = predict(input)
         result = result_compute(result)
-        print(result)
-        return render_template('predictPrice_result.html', form=form, car_brand=car_brand, result=result)
+        sqlprice = f'SELECT * FROM car_list WHERE carPrice>={result["set1"]} and carPrice<={result["set2"]} LIMIT 9'
+        cursor1 = connection.cursor()
+        cursor1.execute(sqlprice)
+        price_range_car = cursor1.fetchall()
+        return render_template('predictPrice_result.html', form=form, car_brand=car_brand, result=result, price_range_car=price_range_car)
     # except:
     #     exe_info='輸入格式錯誤請重新輸入'
     #     return render_template('predictPrice_form.html',exe_info=exe_info, car_brand=car_brand)
