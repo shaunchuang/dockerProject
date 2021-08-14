@@ -19,8 +19,8 @@
                                 <div class="row">
                                     <!--span>{{ error_info }}</span-->
                                     <div class="col-md-12 forformdiv">
-                                        {% if exe_info != None %}
-                                        <p>{{ exe_info }}</p>
+                                        {% if exec_info != None %}
+                                        <div style="color: red"><strong>{{ exec_info }}</strong></div>
                                         {% endif %}
                                         <label class="forlabel" for="car_brand_id">Choose Car Brand</label>
                                         <select class="forblock" id="car_brand_id" name="car_brand">

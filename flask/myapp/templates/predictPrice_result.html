@@ -12,19 +12,19 @@
             <div class="col-sm-12">
                <div class="row">
                   <div class="col-md-6 offset-md-6 background1">
-                     <h4 class="price1">Evaluate Result<h4>
-                           <div class="font1">
-                              <p>{{ form['car_brand'] }} {{ form['car_model'] }}</p>
-                              <p>車型：{{ form['car_model'] }}</p>
-                              <p>年份：{{ form['car_year'] }}</p>
-                              <p>里程：{{ form['car_mileage'] }}</p>
-                           </div>
-                           <div class="row font2">{{ result['set1'] }} ~ {{ result['set2'] }}萬</div>
-                           <div class="row col-md-12 text-bg">
-                              <a href="{{ url_for('index') }}" class="find_btn" role="button"
-                                 aria-pressed="true">回首頁</a>
-                              <a href="{{ url_for('bestCarForm') }}" class="find_btn" role="button"
-                                 aria-pressed="true">前往車輛推薦</a>
+                     <h4>Evaluate Result<h4>
+                           <div class="text-bg">
+                              <div>{{ form['car_brand'] }} {{ form['car_model'] }}</div>
+                              <div><span>車型：</span>{{ form['car_model'] }}</div>
+                              <div><span>年份：</span>{{ form['car_year'] }}</div>
+                              <div><span>里程：</span>{{ form['car_mileage'] }}</div>
+                              <div>{{ result['set1'] }} ~ {{ result['set2'] }}萬</div>
+                              <div class="col-md-12 text-bg">
+                                 <a href="{{ url_for('index') }}" class="find_btn" role="button"
+                                    aria-pressed="true">回首頁</a>
+                                 <a href="{{ url_for('bestCarForm') }}" class="find_btn" role="button"
+                                    aria-pressed="true">前往車輛推薦</a>
+                              </div>
                            </div>
                   </div>
                </div>

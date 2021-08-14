@@ -17,24 +17,24 @@ def index():
 def predictPrice():
     car_brand = ['Aston Martin', 'Audi', 'Bentley', 'BMW', 'Citroen', 'Ferrari', 'Ford', 'Hyundai', 'Infiniti', 'Jaguar', 'Kia', 'Lamborghini', 'Land Rover', 'Lexus', 'Lotus', 'Mercedes-Benz', 'Mahindra',
                  'Maserati', 'Mazda', 'McLaren', 'Mini', 'Mitsubishi', 'Morgan', 'Nissan', 'Peugeot', 'Porsche', 'Rolls-Royce', 'Skoda', 'Ssangyong', 'Subaru', 'Suzuki', 'Tesla', 'Toyota', 'Volkswagen', 'Volvo']
-    # try:
+    exec_info = None
+
     if request.method == 'POST':
-        form = request.form
-        form = dict(form)
-        input = data_collect(form)
-        result = predict(input)
-        result = result_compute(result)
-        sqlprice = f'SELECT * FROM car_list WHERE carPrice>={result["set1"]} and carPrice<={result["set2"]} LIMIT 9'
-        cursor1 = connection.cursor()
-        cursor1.execute(sqlprice)
-        price_range_car = cursor1.fetchall()
-        return render_template('predictPrice_result.html', form=form, car_brand=car_brand, result=result, price_range_car=price_range_car)
-    # except:
-    #     exe_info='輸入格式錯誤請重新輸入'
-    #     return render_template('predictPrice_form.html',exe_info=exe_info, car_brand=car_brand)
-    # finally:
-    #     return render_template('predictPrice_form.html', car_brand=car_brand)
-    return render_template('predictPrice_form.html', car_brand=car_brand)
+        try:
+            form = request.form
+            form = dict(form)
+            input = data_collect(form)
+            result = predict(input)
+            result = result_compute(result)
+        except:
+            return render_template('predictPrice_form.html', car_brand=car_brand, exec_info=exec_info)
+        # sqlprice = f'SELECT * FROM car_list WHERE carPrice>={result["set1"]} and carPrice<={result["set2"]} LIMIT 9'
+        # cursor1 = connection.cursor()
+        # cursor1.execute(sqlprice)
+        # price_range_car = cursor1.fetchall()
+        return render_template('predictPrice_result.html', form=form, car_brand=car_brand, result=result)
+
+    return render_template('predictPrice_form.html', car_brand=car_brand, exec_info=exec_info)
 
 
 @app.route('/loan')
@@ -46,11 +46,14 @@ def loan():
 @app.route('/bestCarForm',  methods=['GET', 'POST'])
 def bestCarForm():
     if request.method == 'POST':
-        form = dict(request.form)
-        cbrand = form['brand']
-        cyear = form['cyear']
-        ckm = form['km']
-        return redirect(url_for('bestCarResult', brand=cbrand, year=cyear, mileage=ckm))
+        try:
+            form = dict(request.form)
+            cbrand = form['brand']
+            cyear = form['cyear']
+            ckm = form['km']
+            return redirect(url_for('bestCarResult', brand=cbrand, year=cyear, mileage=ckm))
+        except:
+            return render_template('bestCar_form.html')
     return render_template('bestCar_form.html')
 
 
