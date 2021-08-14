@@ -2,7 +2,7 @@
 {% block content %}
 <section>
     <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'>
+    <!-- <link href='https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css' rel='stylesheet'> -->
     <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <style>
         * {
@@ -15,7 +15,8 @@
         }
 
         #grad1 {
-            background: rgba(61, 58, 58, 0.5);
+            background: rgba(255, 255, 255, 0.747);
+            border-radius: 0.5rem;
         }
 
         #msform {
@@ -64,7 +65,6 @@
             border-radius: 0px;
             margin-bottom: 25px;
             margin-top: 2px;
-            width: 100%;
             box-sizing: border-box;
             font-family: montserrat;
             color: #2C3E50;
@@ -164,7 +164,7 @@
 
         #progressbar #account:before {
             font-family: FontAwesome;
-            content: "\f5de"
+            content: "\f1b9"
         }
 
         #progressbar #personal:before {
@@ -216,15 +216,13 @@
         }
 
         .radio {
-            display: inline;
-            border-radius: 0;
-            box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.2);
-            box-sizing: border-box;
+            border-radius: 10rem;
             cursor: pointer;
         }
 
         .radio:hover {
-            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3)
+            box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+            border-radius: 10rem;
         }
 
         .radio.selected {
@@ -240,6 +238,12 @@
             color: antiquewhite;
 
         }
+
+        .radiotitle {
+            color: #000000;
+            float: left;
+
+        }
     </style>
     <div id="contact" class="bestCar">
         <div class="container">
@@ -248,7 +252,7 @@
                     <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
                         <div class="card1 px-0 pt-4 pb-0 mt-3 mb-3">
                             <h2><strong class="title-form">速配愛車</strong></h2>
-                            <h6 class="title-form">每個人都值得一台量身打造的車子</h6>
+                            <h5 class="title-form">每個人都值得一台量身打造的車子</h5>
                             {% if exec_info != None %}
                             <h6 class="title-form" style="color: red;">{{ exec_info }}</h6>
                             {% endif %}
@@ -265,66 +269,69 @@
                                         <fieldset>
                                             <div class="form-card">
                                                 <h2 class="fs-title text-center">品牌偏好</h2>
-                                                <div>
-                                                    <input class="radio" type="radio" name="brand" id="brand1"
-                                                        value="normal">
-                                                    <label for="brand1">國產</label>
-                                                </div>
-                                                <div>
-                                                    <input class="radio" type="radio" name="brand" id="brand2"
-                                                        value="advanced">
-                                                    <label for="brand2">進口一般品牌</label>
-                                                </div>
-                                                <div>
-                                                    <input class="radio" type="radio" name="brand" id="brand3"
-                                                        value="luxury">
-                                                    <label for="brand3">進口豪華品牌</label>
-                                                </div>
+                                                <ul class="list-group list-group-flush">
+                                                    <li><input class="radio" type="radio" name="brand" id="brand1"
+                                                            value="normal">
+                                                        <label class="radiotitle" for="brand1">國產</label>
+                                                    </li>
+                                                    <li><input class="radio" type="radio" name="brand" id="brand2"
+                                                            value="advanced">
+                                                        <label class="radiotitle" for="brand2">進口一般品牌</label>
+                                                    </li>
+                                                    <li><input class="radio" type="radio" name="brand" id="brand3"
+                                                            value="luxury">
+                                                        <label class="radiotitle" for="brand3">進口豪華品牌</label>
+                                                    </li>
+                                                </ul>
                                             </div>
 
-                                            <input type="button" name="next" class="next find_btn"
+                                            <input type="button" name="next" class="next action-button"
                                                 value="Next Step">
                                         </fieldset>
                                         <fieldset>
                                             <div class="form-card">
                                                 <h2 class="fs-title text-center">年份</h2>
-                                                <div class="form-check">
-                                                    <input class="radio" type="radio" name="cyear" id="year1" value="5">
-                                                    <label for="year1">5年內</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="radio" type="radio" name="cyear" id="year2"
-                                                        value="510">
-                                                    <label for="year2">5~10年</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="radio" type="radio" name="cyear" id="year3"
-                                                        value="10">
-                                                    <label for="year3">10年以上</label>
-                                                </div>
+                                                <ul>
+                                                    <li>
+                                                        <input class="radio" type="radio" name="cyear" id="year1"
+                                                            value="5">
+                                                        <label class="radiotitle" for="year1">5年內</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="radio" type="radio" name="cyear" id="year2"
+                                                            value="510">
+                                                        <label class="radiotitle" for="year2">5~10年</label>
+                                                    </li>
+                                                    <li>
+                                                        <input class="radio" type="radio" name="cyear" id="year3"
+                                                            value="10">
+                                                        <label class="radiotitle" for="year3">10年以上</label>
+                                                    </li>
+                                                </ul>
                                             </div> <input type="button" name="previous"
                                                 class="previous action-button-previous" value="Previous"> <input
-                                                type="button" name="next" class="next find_btn" value="Next Step">
+                                                type="button" name="next" class="next action-button" value="Next Step">
                                         </fieldset>
                                         <fieldset>
                                             <div class="form-card">
                                                 <h2 class="fs-title text-center">里程</h2>
-                                                <div class="form-check">
-                                                    <input class="radio" type="radio" name="km" id="km1" value="3">
-                                                    <label for="func1">三萬以下</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="radio" type="radio" name="km" id="km2" value="310">
-                                                    <label for="func2">三～十萬</label>
-                                                </div>
-                                                <div class="form-check">
-                                                    <input class="radio" type="radio" name="km" id="km3" value="10">
-                                                    <label for="func3">十萬以上</label>
-                                                </div>
+                                                <ul>
+                                                    <li> <input class="radio" type="radio" name="km" id="km1" value="3">
+                                                        <label class="radiotitle" for="func1">三萬以下</label>
+                                                    </li>
+                                                    <li> <input class="radio" type="radio" name="km" id="km2"
+                                                            value="310">
+                                                        <label class="radiotitle" for="func2">三～十萬</label>
+                                                    </li>
+                                                    <li> <input class="radio" type="radio" name="km" id="km3"
+                                                            value="10">
+                                                        <label class="radiotitle" for="func3">十萬以上</label>
+                                                    </li>
+                                                </ul>
                                             </div>
                                             <input type="button" name="previous" class="previous action-button-previous"
                                                 value="Previous">
-                                            <input type="submit" name="make_payment" class="next find_btn"
+                                            <input type="submit" name="make_payment" class="next action-button"
                                                 value="Confirm">
                                         </fieldset>
 
