@@ -19,6 +19,7 @@
                             <p class="card-text">此車輛無詳細描述資訊，點擊以獲得更多資訊</p>
                             {% endif %}
                         </div>
+                        <hr>
                         <ul class="list-group list-group-flush">
                             {% if r['carYear'] != 0 %}
                             <li class="list-group-item list-group-item-action">年份：{{ r['carYear'] }}年</li>
@@ -26,7 +27,8 @@
                             <li class="list-group-item list-group-item-action">此車輛無年份資訊</li>
                             {% endif %}
                             {% if r['carMileage'] != 0 %}
-                            <li class="list-group-item list-group-item-action">里程：{{ (r['carMileage']/10000)|round(2) }}萬公里
+                            <li class="list-group-item list-group-item-action">里程：{{ (r['carMileage']/10000)|round(2)
+                                }}萬公里
                             </li>
                             {% else %}
                             <li class="list-group-item list-group-item-action">此車輛無里程資訊</li>
@@ -43,7 +45,9 @@
                         </ul>
                         <div class="card-footer">
                             {% if r['carPrice'] != 0 %}
-                            <small class="text-muted">{{ (r['carPrice']/10000)|round(2) }}萬</small><span class="location">  |  </span><a class="address" href="{{ url_for('loan', price=((r['carPrice']/10000)|round(2))) }}">貸款試算</a>
+                            <small class="text-muted">{{ (r['carPrice']/10000)|round(2) }}萬 </small><span
+                                class="location"> | </span><a class="address"
+                                href="{{ url_for('loan', price=((r['carPrice']/10000)|round(2))) }}"> 貸款試算</a>
                             {% else %}
                             <small class="text-muted">此車輛無價格資訊</small>
                             {% endif %}
@@ -53,79 +57,108 @@
         </div>
         {% endfor %}
     </div>
+    <div class="col-md-12">
+        <div>共 {{ totalpages }} 頁，{{ items }} 輛車</div>
+    </div>
+    <div class="pageblock">
+        <nav aria-label="Page navigation example">
+
+            <ul class="pagination">
+                {% if page == 1 %}
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+
+                <li class="page-item"><a class="page-link"
+                        href="{{ url_for('bestCarResult', page=page, brand=brand, year=year, mileage=mileage) }}">{{
+                        page }}</a>
+                </li>
+                <li class="page-item"><a class="page-link"
+                        href="{{ url_for('bestCarResult', page=(page+1), brand=brand, year=year, mileage=mileage) }}">{{
+                        (page+1)
+                        }}</a></li>
+                <li class="page-item"><a class="page-link"
+                        href="{{ url_for('bestCarResult', page=(page+2), brand=brand, year=year, mileage=mileage) }}">{{
+                        (page+2)
+                        }}</a></li>
+
+                <li class="page-item">
+                    <a class="page-link"
+                        href="{{ url_for('bestCarResult', page=(page+1), brand=brand, year=year, mileage=mileage) }}"
+                        aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+                {% endif %}
+                {% if page == totalpages %}
+                <li class="page-item">
+                    <a class="page-link"
+                        href="{{ url_for('bestCarResult', page=(page-1), brand=brand, year=year, mileage=mileage) }}"
+                        aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+
+                <li class="page-item"><a class="page-link"
+                        href="{{ url_for('bestCarResult', page=(page-2), brand=brand, year=year, mileage=mileage) }}">{{
+                        (page-2)
+                        }}</a></li>
+                <li class="page-item"><a class="page-link"
+                        href="{{ url_for('bestCarResult', page=(page-1), brand=brand, year=year, mileage=mileage) }}">{{
+                        (page-1)
+                        }}</a></li>
+                <li class="page-item"><a class="page-link"
+                        href="{{ url_for('bestCarResult', page=(page), brand=brand, year=year, mileage=mileage) }}">{{
+                        (page)
+                        }}</a></li>
+
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+                {% endif %}
+                {% if page>1 %}
+                <li class="page-item">
+                    <a class="page-link"
+                        href="{{ url_for('bestCarResult', page=(page-1), brand=brand, year=year, mileage=mileage) }}"
+                        aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                </li>
+
+                <li class="page-item"><a class="page-link"
+                        href="{{ url_for('bestCarResult', page=(page-1), brand=brand, year=year, mileage=mileage) }}">{{
+                        (page-1)
+                        }}</a></li>
+                <li class="page-item"><a class="page-link"
+                        href="{{ url_for('bestCarResult', page=page, brand=brand, year=year, mileage=mileage) }}">{{
+                        page }}</a>
+                </li>
+                <li class="page-item"><a class="page-link"
+                        href="{{ url_for('bestCarResult', page=(page+1), brand=brand, year=year, mileage=mileage) }}">{{
+                        (page+1)
+                        }}</a></li>
+
+                <li class="page-item">
+                    <a class="page-link"
+                        href="{{ url_for('bestCarResult', page=(page+1), brand=brand, year=year, mileage=mileage) }}"
+                        aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+
+        </nav>
+    </div>
 </section>
-<div class="pageblock">
-    <nav aria-label="Page navigation example">
-
-        <ul class="pagination">
-            {% if page == 1 %}
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-            </li>
-
-            <li class="page-item"><a class="page-link" href="{{ url_for('bestCarResult', page=page, brand=brand, year=year, mileage=mileage) }}">{{ page }}</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="{{ url_for('bestCarResult', page=(page+1), brand=brand, year=year, mileage=mileage) }}">{{ (page+1)
-                    }}</a></li>
-            <li class="page-item"><a class="page-link" href="{{ url_for('bestCarResult', page=(page+2), brand=brand, year=year, mileage=mileage) }}">{{ (page+2)
-                    }}</a></li>
-
-            <li class="page-item">
-                <a class="page-link" href="{{ url_for('bestCarResult', page=(page+1), brand=brand, year=year, mileage=mileage) }}" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
-            {% endif %}
-            {% if page == totalpages %}
-            <li class="page-item">
-                <a class="page-link" href="{{ url_for('bestCarResult', page=(page-1), brand=brand, year=year, mileage=mileage) }}" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-            </li>
-
-            <li class="page-item"><a class="page-link" href="{{ url_for('bestCarResult', page=(page-2), brand=brand, year=year, mileage=mileage) }}">{{ (page-2)
-                    }}</a></li>
-            <li class="page-item"><a class="page-link" href="{{ url_for('bestCarResult', page=(page-1), brand=brand, year=year, mileage=mileage) }}">{{ (page-1)
-                    }}</a></li>
-            <li class="page-item"><a class="page-link" href="{{ url_for('bestCarResult', page=(page), brand=brand, year=year, mileage=mileage) }}">{{ (page)
-                    }}</a></li>
-
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
-            {% endif %}
-            {% if page>1 %}
-            <li class="page-item">
-                <a class="page-link" href="{{ url_for('bestCarResult', page=(page-1), brand=brand, year=year, mileage=mileage) }}" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-            </li>
-
-            <li class="page-item"><a class="page-link" href="{{ url_for('bestCarResult', page=(page-1), brand=brand, year=year, mileage=mileage) }}">{{ (page-1)
-                    }}</a></li>
-            <li class="page-item"><a class="page-link" href="{{ url_for('bestCarResult', page=page, brand=brand, year=year, mileage=mileage) }}">{{ page }}</a>
-            </li>
-            <li class="page-item"><a class="page-link" href="{{ url_for('bestCarResult', page=(page+1), brand=brand, year=year, mileage=mileage) }}">{{ (page+1)
-                    }}</a></li>
-
-            <li class="page-item">
-                <a class="page-link" href="{{ url_for('bestCarResult', page=(page+1), brand=brand, year=year, mileage=mileage) }}" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
-            {% endif %}
-        </ul>
-
-    </nav>
-</div>
 {% endblock %}

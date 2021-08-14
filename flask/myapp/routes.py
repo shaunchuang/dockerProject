@@ -120,4 +120,4 @@ def bestCarResult():
     for r in result:
         r['car_url'] = create_url(r)    # create car link from defined function
 
-    return render_template('bestCar_result.html', result=result, page=page, totalpages=total_pages, brand=cbrand, year=cyear, mileage=ckm)
+    return render_template('bestCar_result.html', result=result, page=page, totalpages=total_pages, items=items, brand=cbrand, year=cyear, mileage=ckm)

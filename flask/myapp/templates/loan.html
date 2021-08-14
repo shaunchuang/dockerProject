@@ -23,7 +23,7 @@
                                             name="Search" value="{{ price }}">
                                         {% else %}
                                         <input id="monetary" class="contactus" placeholder="貸款金額(萬)" type="Search"
-                                        name="Search">
+                                            name="Search">
                                         {% endif %}
                                     </div>
                                     <div class="col-sm-12">
@@ -32,9 +32,9 @@
                                     </div>
                                     <div class="col-sm-12">
                                         <a href="#loancal">
-                                        <div style="text-align:center"><input class="find_btn" type="button"
-                                                value="Find Now" onclick="ChangeString()"> </div>
-                                        <p style="text-align:center"><span id="NewStringBox"></span></p>
+                                            <div style="text-align:center"><input class="find_btn" type="button"
+                                                    value="Find Now" onclick="ChangeString()"> </div>
+                                            <p style="text-align:center"><span id="NewStringBox"></span></p>
                                         </a>
                                     </div>
                                 </div>
@@ -302,15 +302,11 @@
             </div>
         </div>
         <div class="col-sm-12 text-bg">
-            <a href="{{ url_for('index') }}" role="button" aria-pressed="true"><input class="find_btn" type="button"
-                value="回首頁"></a>
-            <a href="#loanagain" role="button" aria-pressed="true"><input class="find_btn" type="button"
-                value="重新試算"></a>
-            <a href="javascript:history.back()" role="button" aria-pressed="true"><input class="find_btn" type="button"
-                value="回上一頁"></a>
-            <a href="{{ url_for('bestCarForm')}}" role="button" aria-pressed="true"><input class="find_btn" type="button"
-                value="前往車輛推薦"></a>
-         </div>
+            <a class="find_btn forlink" href="{{ url_for('index') }}" role="button" aria-pressed="true">回首頁</a>
+            <a class="find_btn forlink" href="#loanagain" role="button" aria-pressed="true">重新試算</a>
+            <a class="find_btn forlink" href="javascript:history.back()" role="button" aria-pressed="true">回上一頁</a>
+            <a class="find_btn forlink" href="{{ url_for('bestCarForm')}}" role="button" aria-pressed="true">前往車款推薦</a>
+        </div>
     </div>
 </section>
 <div class="choose ">
