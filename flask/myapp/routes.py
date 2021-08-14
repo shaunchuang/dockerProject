@@ -56,14 +56,14 @@ def bestCarForm():
 def bestCarResult():
 
     page = request.args.get('page', 1, type=int)  # init page=1
+    cbrand = request.args.get('brand', None)
+    cyear = request.args.get('year', None)
+    ckm = request.args.get('mileage', None)
 
     # Normal: TOYOTA,
     # FORD, HONDA, NISSAN, MITSUBISHI, MAZADA, LUXGEN, HYUNDAI, KIA
     # Advanced: SKODA, SUZUKI, SUBARU, VOLKSWAGEN, PEUGEOT, CITROEN, RENAULT, OPEL,
     # Luxury: LEXUS, INFINITI, JAGUAR, TESLA, VOLVO, BENZ, BMW, AUDI, PORSCHE, MASERATI, MCLAREN, FERRARI, LAMBORGHINI
-    cbrand = request.args.get('brand', None)
-    cyear = request.args.get('year', None)
-    ckm = request.args.get('mileage', None)
 
     brandsql = None
     if cbrand == 'normal':
