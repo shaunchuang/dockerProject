@@ -13,22 +13,22 @@
                <div class="row">
                   <div class="col-md-6 offset-md-6 background1">
                      <div class="text-bg">
-                              <h4>Evaluate Result<h4><br>
-                              <div><span>廠牌：</span>{{ form['car_brand'] }}</div>
-                              <div><span>車型：</span>{{ form['car_model'] }}</div>
-                              <div><span>年份：</span>{{ form['car_year'] }}</div>
-                              <div><span>里程：</span>{{ form['car_mileage'] }}</div>
-                              <div><span>預測結果：</span>{{ result['set1'] }} ~ {{ result['set2'] }}萬</div>
+                        <br>
+                        <h4>Evaluate Result<h4><br>
+                              <div><span style="display: inline;">廠牌：</span>{{ form['car_brand'] }}</div>
+                              <div><span style="display: inline;">車型：</span>{{ form['car_model'] }}</div>
+                              <div><span style="display: inline;">年份：</span>{{ form['car_year'] }}</div>
+                              <div><span style="display: inline;">里程：</span>{{ form['car_mileage'] }}</div>
+                              <div><span style="display: inline;">預測結果：</span>{{ result['set1'] }} ~ {{ result['set2']
+                                 }}萬</div>
                               <br>
                               <div class="col-sm-12 text-bg">
-                                 <a href="{{ url_for('index') }}" role="button"
-                                    aria-pressed="true"><input class="find_btn" type="button"
-                                    value="回首頁"></a>
-                                 <a href="{{ url_for('bestCarForm') }}" role="button"
-                                    aria-pressed="true"><input class="find_btn" type="button"
-                                    value="前往車輛推薦"></a>
+                                 <a href="{{ url_for('index') }}" role="button" aria-pressed="true"><button
+                                       class="find_btn">回首頁</button></a>
+                                 <a href="{{ url_for('bestCarForm') }}" role="button" aria-pressed="true"><button
+                                       class="find_btn">前往車輛推薦</button></a>
                               </div>
-                           </div>
+                     </div>
                   </div>
                </div>
             </div>
