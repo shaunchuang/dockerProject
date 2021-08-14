@@ -1,4 +1,3 @@
-import re
 from flask.helpers import url_for
 from myapp import app
 from flask import render_template, request, redirect
