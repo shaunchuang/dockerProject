@@ -19,8 +19,8 @@
                               <p>年份：{{ form['car_year'] }}</p>
                               <p>里程：{{ form['car_mileage'] }}</p>
                            </div>
-                           <div class="font2">{{ result['set1'] }} ~ {{ result['set2'] }}萬</div>
-                           <div>
+                           <div class="row font2">{{ result['set1'] }} ~ {{ result['set2'] }}萬</div>
+                           <div class="row col-md-12 text-bg">
                               <a href="{{ url_for('index') }}" class="find_btn" role="button"
                                  aria-pressed="true">回首頁</a>
                               <a href="{{ url_for('bestCarForm') }}" class="find_btn" role="button"
