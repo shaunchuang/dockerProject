@@ -11879,9 +11879,9 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 .resulttext {
+  display: inline;
   font-weight: 400;
   font-size: 2rem;
-  display: inline;
 }
 
 .preresult-text{
