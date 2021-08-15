@@ -67,9 +67,8 @@ def bestCarResult():
     cyear = request.args.get('year', None)
     ckm = request.args.get('mileage', None)
 
-    # Normal: TOYOTA,
-    # FORD, HONDA, NISSAN, MITSUBISHI, MAZADA, LUXGEN, HYUNDAI, KIA
-    # Advanced: SKODA, SUZUKI, SUBARU, VOLKSWAGEN, PEUGEOT, CITROEN, RENAULT, OPEL,
+    # Normal: TOYOTA, FORD, HONDA, NISSAN, MITSUBISHI, MAZADA, LUXGEN, HYUNDAI, KIA, SUZUKI
+    # Advanced: SKODA, SUBARU, VOLKSWAGEN, PEUGEOT, CITROEN, RENAULT, OPEL,
     # Luxury: LEXUS, INFINITI, JAGUAR, TESLA, VOLVO, BENZ, BMW, AUDI, PORSCHE, MASERATI, MCLAREN, FERRARI, LAMBORGHINI
 
     brandsql = None

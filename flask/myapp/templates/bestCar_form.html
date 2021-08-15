@@ -112,13 +112,15 @@
             border-radius: 0px;
             cursor: pointer;
             padding: 10px 5px;
-            margin: 10px 5px
+            margin: 10px 5px;
+            transition: ease-in all 0.5s;
         }
 
         #msform .action-button-previous:hover,
         #msform .action-button-previous:focus {
             border-radius: 1rem;
             color: #000000;
+            transition: ease-in all 0.5s;
         }
 
         select.list-dt {
@@ -247,7 +249,10 @@
             color: #000000;
             float: left;
             cursor: pointer;
+            margin-top: 1rem;
+            margin-right: 0.5rem;
         }
+        
     </style>
     <div id="contact" class="bestCar">
         <div class="container">
@@ -278,14 +283,17 @@
                                                             value="normal">
                                                         <label class="radiotitle" for="brand1">國產</label>
                                                     </li>
+                                                    <div>TOYOTA, FORD, HONDA, NISSAN, MITSUBISHI, MAZADA, LUXGEN, HYUNDAI, KIA, SUZUKI</div>
                                                     <li><input class="radio" type="radio" name="brand" id="brand2"
                                                             value="advanced">
                                                         <label class="radiotitle" for="brand2">進口一般品牌</label>
                                                     </li>
+                                                    <div>SKODA, SUBARU, VOLKSWAGEN, PEUGEOT, CITROEN, RENAULT, OPEL</div>
                                                     <li><input class="radio" type="radio" name="brand" id="brand3"
                                                             value="luxury">
                                                         <label class="radiotitle" for="brand3">進口豪華品牌</label>
                                                     </li>
+                                                    <div>LEXUS, INFINITI, JAGUAR, TESLA, VOLVO, BENZ, BMW, AUDI, PORSCHE, MASERATI, MCLAREN</div>
                                                 </ul>
                                             </div>
 
@@ -321,15 +329,15 @@
                                                 <h2 class="fs-title text-center">里程</h2>
                                                 <ul>
                                                     <li> <input class="radio" type="radio" name="km" id="km1" value="3">
-                                                        <label class="radiotitle" for="km1">三萬以下</label>
+                                                        <label class="radiotitle" for="km1">三萬公里以下</label>
                                                     </li>
                                                     <li> <input class="radio" type="radio" name="km" id="km2"
                                                             value="310">
-                                                        <label class="radiotitle" for="km2">三～十萬</label>
+                                                        <label class="radiotitle" for="km2">三～十公里萬</label>
                                                     </li>
                                                     <li> <input class="radio" type="radio" name="km" id="km3"
                                                             value="10">
-                                                        <label class="radiotitle" for="km3">十萬以上</label>
+                                                        <label class="radiotitle" for="km3">十萬公里以上</label>
                                                     </li>
                                                 </ul>
                                             </div>

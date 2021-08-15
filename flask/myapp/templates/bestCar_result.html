@@ -12,7 +12,7 @@
                     <div class="card h-100 text-center">
                         <img src="{{ r['carPhoto'] }}" class="card-img-top car-img" alt="此車輛無圖片">
                         <div class="card-body">
-                            <h5 class="card-title">{{ r['carBrand'] }} {{ r['carModel'] }}</h5>
+                            <h5 class="card-title" style="height: 3.5rem;">{{ r['carBrand'] }} {{ r['carModel'] }}</h5>
                             {% if r['carTitle'] != '0' %}
                             <p class="card-text">{{ r['carTitle'] }}</p>
                             {% else %}
