@@ -104,7 +104,7 @@ def data_collect(form):
 
 
 def result_compute(result):
-    result = round(math.exp(result)/10000, 1)
-    result1 = result - result*0.05
-    result2 = result + result*0.05
+    result = math.exp(result)/10000
+    result1 = round(result - result*0.05, 1)
+    result2 = round(result + result*0.05, 1)
     return {'set1': result1, 'set2': result2}
