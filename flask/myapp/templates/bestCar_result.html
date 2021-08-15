@@ -44,7 +44,7 @@
                         </ul>
                         <div class="card-footer">
                             {% if r['carPrice'] != 0 %}
-                            <small class="text-muted" style="color: red">{{ (r['carPrice']/10000)|round(2) }}萬 </small><span
+                            <small class="text-muted" style="color: red">價格：{{ (r['carPrice']/10000)|round(2) }}萬 </small><span
                                 class="location"> | </span><a class="address"
                                 href="{{ url_for('loan', price=((r['carPrice']/10000)|round(2))) }}"> 貸款試算</a>
                             {% else %}

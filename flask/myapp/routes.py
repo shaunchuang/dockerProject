@@ -28,6 +28,7 @@ def predictPrice():
             result = predict(input)
             result = result_compute(result)
         except:
+            exec_info = '預測時出現錯誤請重新輸入'
             return render_template('predictPrice_form.html', car_brand=car_brand, exec_info=exec_info)
         # sqlprice = f'SELECT * FROM car_list WHERE carPrice>={result["set1"]} and carPrice<={result["set2"]} LIMIT 9'
         # cursor1 = connection.cursor()

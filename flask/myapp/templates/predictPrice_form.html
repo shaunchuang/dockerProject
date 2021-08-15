@@ -15,12 +15,12 @@
                             <form style="background: transparent;" action="/predictPrice" method="POST">
                                 <div class="titlepage">
                                     <h2 class="forformh2" style="color: white">二手車價預測</h2>
+                                        {% if exec_info != None %}
+                                        <div style="color: red">{{ exec_info }}</div>
+                                        {% endif %}
                                 </div>
                                 <div class="row">
                                     <div class="col-md-12 forformdiv">
-                                        {% if exec_info != None %}
-                                        <div style="color: red"><strong>{{ exec_info }}</strong></div>
-                                        {% endif %}
                                         <label class="forlabel newform" for="car_brand_id">選擇車廠</label>
                                         <select class="forblock" id="car_brand_id" name="car_brand">
                                             <option selected> -- 選擇車厰 -- </option>
