@@ -11882,12 +11882,12 @@ section#contact form#contactForm :-ms-input-placeholder {
   display: inline;
   font-weight: 400;
   font-size: 2rem;
+  font-family: sans-serif;
 }
 
-.preresult-text{
+.preresult-text {
   padding-bottom: 1rem;
   margin-bottom: 0.5rem;
-
 }
 
 .newform {
@@ -11914,4 +11914,3 @@ section#contact form#contactForm :-ms-input-placeholder {
   line-height: 1rem;
   cursor: pointer;
 }
-
