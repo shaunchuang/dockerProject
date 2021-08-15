@@ -11880,4 +11880,12 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 .resulttext {
   font-weight: 400;
+  font-size: 2rem;
+  display: inline;
+}
+
+.preresult-text{
+  padding-bottom: 1rem;
+  margin-bottom: 0.5rem;
+
 }

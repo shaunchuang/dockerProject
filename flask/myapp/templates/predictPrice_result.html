@@ -12,24 +12,24 @@
             <div class="col-sm-12">
                <div class="row">
                   <div class="col-md-6 offset-md-6 background1">
-                     <div class="text-bg">
+                     <div class="text-bg preresult-text">
                         <br>
                         <h2>預測結果<h2>
-                              <div class="col-sm-12 text-bg" style="margin-bottom: 2rem;">
-                                 <div class="resultblock"><span style="font-size: 2rem;">廠牌：</span>{{ form['car_brand'] }}
+                              <div class="col-sm-12 text-bg preresult-text">
+                                 <div class="resultblock"><span class="resulttext">廠牌：</span>{{ form['car_brand'] }}
                                  </div>
-                                 <div class="resultblock"><span style="font-size: 2rem;">車型：</span>{{ form['car_model'] }}
+                                 <div class="resultblock"><span class="resulttext">車型：</span>{{ form['car_model'] }}
                                  </div>
-                                 <div class="resultblock"><span style="font-size: 2rem;">年份：</span>{{ form['car_year'] }}
+                                 <div class="resultblock"><span class="resulttext">年份：</span>{{ form['car_year'] }}
                                  </div>
-                                 <div class="resultblock"><span style="font-size: 2rem;">里程：</span>{{ form['car_mileage'] }}
+                                 <div class="resultblock"><span class="resulttext">里程：</span>{{ form['car_mileage'] }}
                                  </div>
-                                 <div class="resultblock"><span style="font-size: 2rem;">價格預測結果：</span>{{ result['set1'] }} ~ {{
+                                 <div class="resultblock"><span class="resulttext">價格預測結果：</span>{{ result['set1'] }} ~ {{
                                     result['set2']
                                     }}萬</div>
                                  <br>
                               </div>
-                              <div class="col-sm-12 text-bg" style="margin-bottom: 2rem;">
+                              <div class="col-sm-12 text-bg preresult-text">
                                  <a class="find_btn forlink" href="{{ url_for('index') }}" role="button"
                                     aria-pressed="true">回首頁</a>
                                  <a class="find_btn forlink" href="{{ url_for('bestCarForm') }}" role="button"
