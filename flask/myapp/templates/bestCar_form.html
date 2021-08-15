@@ -84,7 +84,7 @@
 
         #msform .action-button {
             width: 100px;
-            background: #f6d601;
+            background: black;
             font-weight: bold;
             color: white;
             border: black 0.1rem solid;
@@ -97,7 +97,9 @@
         #msform .action-button:hover,
         #msform .action-button:focus {
             border-radius: 1rem;
+            background: #f6d601;
             color: #000000;
+            transition: ease-in all 0.5s;
         }
 
         #msform .action-button-previous {
@@ -253,8 +255,8 @@
                 <div class="row justify-content-center mt-0">
                     <div class="col-11 col-sm-9 col-md-7 col-lg-6 text-center p-0 mt-3 mb-2">
                         <div class="card1 px-0 pt-4 pb-0 mt-3 mb-3">
-                            <h2><strong class="title-form">速配愛車</strong></h2>
-                            <h5 class="title-form">每個人都值得一台量身打造的車子</h5>
+                            <h2><strong class="title-form">速配夢想車</strong></h2>
+                            <h5 class="title-form">幫每一個人完成輕鬆購車的夢想</h5>
                             {% if exec_info != None %}
                             <h6 class="title-form" style="color: red;">{{ exec_info }}</h6>
                             {% endif %}
