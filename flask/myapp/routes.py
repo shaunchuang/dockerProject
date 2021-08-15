@@ -15,8 +15,9 @@ def index():
 
 @app.route('/predictPrice', methods=['GET', 'POST'])
 def predictPrice():
-    car_brand = ['Aston Martin', 'Audi', 'Bentley', 'BMW', 'Citroen', 'Ferrari', 'Ford', 'Hyundai', 'Infiniti', 'Jaguar', 'Kia', 'Lamborghini', 'Land Rover', 'Lexus', 'Lotus', 'Mercedes-Benz', 'Mahindra',
-                 'Maserati', 'Mazda', 'McLaren', 'Mini', 'Mitsubishi', 'Morgan', 'Nissan', 'Peugeot', 'Porsche', 'Rolls-Royce', 'Skoda', 'Ssangyong', 'Subaru', 'Suzuki', 'Tesla', 'Toyota', 'Volkswagen', 'Volvo']
+    car_brand = ['Toyota', 'Ford', 'Nissan', 'Mercedes-Benz', 'BMW', 'Mitsubishi', 'Suzuki', 'Honda', 'Mazda', 'Hyundai', 'Luxgen', 'Subaru', 'Lexus', 'Kia', 'VW', 'Landrover', 'Skoda',
+                 'Mini', 'Volvo', 'Audi', 'Smart', 'Peugeot', 'Porsche', 'Citroen', 'Infiniti', 'Jaguar', 'Isuzu', 'Lamborghini', 'Ferrari', 'Alfa Romeo', 'Chevrolet', 'Dodge', 'Maserati', 'Opel', 'Saab',
+                 'Fiat','Jeep','Bentley','Mclaren','Chrysler','Tesla','Buick','Cmc','Renault','Hummer','Scion','Rolls-Royce','Acura','Cadillac','Iveco','Formosa','Aston Martin']
     exec_info = None
 
     if request.method == 'POST':

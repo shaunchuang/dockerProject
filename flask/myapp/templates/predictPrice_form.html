@@ -21,14 +21,12 @@
                                         {% if exec_info != None %}
                                         <div style="color: red"><strong>{{ exec_info }}</strong></div>
                                         {% endif %}
-                                        <label class="forlabel" for="car_brand_id">選擇車廠</label>
+                                        <label class="forlabel newform" for="car_brand_id">選擇車廠</label>
                                         <select class="forblock" id="car_brand_id" name="car_brand">
                                             <option selected> -- 選擇車厰 -- </option>
-                                            <option value="Mercedes-Benz">Mercedes-Benz</option>
-                                            <option value="BMW">BMW</option>
-                                            <option value="Toyota">Toyota</option>
-                                            <option value="Ford">Ford</option>
-                                            <option value="Nissan">Nissan</option>
+                                            {% for brand in car_brand %}
+                                            <option value="{{ brand }}">{{ brand }}</option>
+                                            {% endfor %}
                                         </select>
                                     </div>
                                     <div class="col-md-12 forformdiv">
@@ -36,17 +34,20 @@
                                         <select class="forblock" id="car_model_id" name="car_model"></select>
                                     </div>
                                     <div class="col-md-12 forformdiv">
-                                        <label class="forlabel">車款年份</label>
-                                        <input class="form-control forblock" type="text" name="car_year"
-                                            placeholder="車款年份">
+                                        <label class="forlabel newform">車款年份</label>
+                                        <select class="forblock" name="car_year">
+                                         {% for year in range(1990, 2022) %}
+                                         <option value="{{ year }}">{{ year }}</option>
+                                         {% endfor %}
+                                        </select>
                                     </div>
                                     <div class="col-md-12 forformdiv">
-                                        <label class="forlabel">車款里程</label>
+                                        <label class="forlabel newform">車款里程</label>
                                         <input class="form-control forblock" type="text" name="car_mileage"
                                             placeholder="車款里程">
                                     </div>
                                     <div class="col-md-12 forformdiv">
-                                        <label class="forlabel">選擇車輛顏色</label>
+                                        <label class="forlabel newform">選擇車輛顏色</label>
                                         <select class="forblock" name="car_color">
                                             <option selected> -- 選擇車輛顏色 -- </option>
                                             <option value="黑色">黑色</option>
@@ -57,12 +58,12 @@
                                         </select>
                                     </div>
                                     <div class="col-md-12 forformdiv">
-                                        <label class="forlabel">排氣量</label>
+                                        <label class="forlabel newform">排氣量</label>
                                         <input class="form-control forblock" type="text" name="car_cylinderVolume"
                                             placeholder="排氣量(cc)">
                                     </div>
                                     <div class="col-md-12 forformdiv">
-                                        <label class="forlabel">選擇驅動方式</label>
+                                        <label class="forlabel newform">選擇驅動方式</label>
                                         <select class="forblock" name="car_driveMode">
                                             <option selected> -- 選擇驅動方式 -- </option>
                                             <option value="二輪驅動">二輪驅動</option>
@@ -70,7 +71,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-12 forformdiv">
-                                        <label class="forlabel">選擇變速箱形式</label>
+                                        <label class="forlabel newform">選擇變速箱形式</label>
                                         <select class="forblock" name="car_gear">
                                             <option selected> -- 選擇變速箱形式 -- </option>
                                             <option value="手自排">手自排</option>
@@ -80,7 +81,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-12 forformdiv">
-                                        <label class="forlabel">選擇燃料</label>
+                                        <label class="forlabel newform">選擇燃料</label>
                                         <select class="forblock" name="car_fuel">
                                             <option selected> -- 選擇燃料 -- </option>
                                             <option value="汽油">汽油</option>
@@ -90,7 +91,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-12 forformdiv">
-                                        <label class="forlabel">選擇車門數</label>
+                                        <label class="forlabel newform">選擇車門數</label>
                                         <select class="forblock" name="car_door">
                                             <option selected> -- 選擇車門數 -- </option>
                                             <option value="2">2</option>
@@ -99,7 +100,7 @@
                                         </select>
                                     </div>
                                     <div class="col-md-12 forformdiv">
-                                        <label class="forlabel">選擇座位數</label>
+                                        <label class="forlabel newform">選擇座位數</label>
                                         <select class="forblock" name="car_seat">
                                             <option selected> -- 選擇座位數 -- </option>
                                             <option value="2">2</option>
