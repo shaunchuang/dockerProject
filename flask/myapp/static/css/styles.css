@@ -7760,7 +7760,7 @@ fieldset:disabled .btn {
 }
 
 .text-muted {
-  color: #ff0000 !important;
+  color: #ff0000;
   font-size: 1.1rem;
 }
 
