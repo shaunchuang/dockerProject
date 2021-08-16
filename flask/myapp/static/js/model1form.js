@@ -75,15 +75,15 @@ Array.from(selected_option).forEach(function(el){
 })
 
 function inputString() {
-    var event = new Event('input',{'bubbles':true,'cancelable':true});
+    // var event = new Event('input',{'bubbles':true,'cancelable':true});
     var event2 = new Event('select',{'bubbles':true, 'cancelable':true});
-    document.getElementById('car_cylinderVolume_id').value="1800"
-    document.getElementById('car_mileage').value="50000"
-    document.getElementById('car_cylinderVolume_id').dispatchEvent(event)
-    document.getElementById('car_mileage').dispatchEvent(event)
+    // document.getElementById('car_cylinderVolume_id').value="1800"
+    // document.getElementById('car_mileage').value="50000"
+    // document.getElementById('car_cylinderVolume_id').dispatchEvent(event)
+    // document.getElementById('car_mileage').dispatchEvent(event)
 
 
-    var select = document.querySelector('#car_brand_id'),
+    var select1 = document.querySelector('#car_brand_id'),
     var select2 = document.querySelector('#car_year_id'),
     var select3 = document.querySelector('#car_color_id'),
     var select4 = document.querySelector('#car_driveMode_id'),
@@ -93,10 +93,8 @@ function inputString() {
     var select8 = document.querySelector('#car_seat_id'),
     input = document.querySelector('#demobutton');
 
-    select.addEventListener('change',function(){});
-
     input.addEventListener('click',function(){
-    select.value = 'Toyota';
+    select1.value = 'Toyota';
     select2.value= '2012';
     select3.value='白色';
     select4.value='二輪驅動';
@@ -105,7 +103,7 @@ function inputString() {
     select7.value='4';
     select8.value='5';
 
-    select.dispatchEvent(event2)
+    select1.dispatchEvent(event2)
     select2.dispatchEvent(event2)
     select3.dispatchEvent(event2)
     select4.dispatchEvent(event2)
