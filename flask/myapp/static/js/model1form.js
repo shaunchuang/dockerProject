@@ -80,6 +80,17 @@ function inputString() {
     document.getElementById('car_mileage').value="50000"
     document.getElementById('car_cylinderVolume_id').dispatchEvent(event)
     document.getElementById('car_mileage').dispatchEvent(event)
+
+
+    var select = document.querySelector('#car_brand_id'),
+    input = document.querySelector('#demobutton');
+    select.addEventListener('change',function(){
+    alert('changed');
+    });
+    input.addEventListener('click',function(){
+    select.value = 'Toyota';
+    select.dispatchEvent(new Event('change'));
+});
 }
 
 
