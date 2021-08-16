@@ -83,17 +83,17 @@ function inputString() {
     // document.getElementById('car_mileage').dispatchEvent(event)
 
 
-    var select1 = document.querySelector('#car_brand_id'),
-    var select2 = document.querySelector('#car_year_id'),
-    var select3 = document.querySelector('#car_color_id'),
-    var select4 = document.querySelector('#car_driveMode_id'),
-    var select5 = document.querySelector('#car_gear_id'),
-    var select6 = document.querySelector('#car_fuel_id'),
-    var select7 = document.querySelector('#car_door_id'),
-    var select8 = document.querySelector('#car_seat_id'),
-    input = document.querySelector('#demobutton');
+    var select1 = document.querySelector('#car_brand_id')
+    var select2 = document.querySelector('#car_year_id')
+    var select3 = document.querySelector('#car_color_id')
+    var select4 = document.querySelector('#car_driveMode_id')
+    var select5 = document.querySelector('#car_gear_id')
+    var select6 = document.querySelector('#car_fuel_id')
+    var select7 = document.querySelector('#car_door_id')
+    var select8 = document.querySelector('#car_seat_id')
+    // input = document.querySelector('#demobutton');
 
-    input.addEventListener('click',function(){
+    // input.addEventListener('click',function(){
     select1.value = 'Toyota';
     select2.value= '2012';
     select3.value='白色';
@@ -111,7 +111,7 @@ function inputString() {
     select6.dispatchEvent(event2)
     select7.dispatchEvent(event2)
     select8.dispatchEvent(event2)
-});
+// });
 }
 
 
