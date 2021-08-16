@@ -76,6 +76,7 @@ Array.from(selected_option).forEach(function(el){
 
 function inputString() {
     var event = new Event('input',{'bubbles':true,'cancelable':true});
+    var event2 = new Event('select',{'bubbles':true, 'cancelable':true});
     document.getElementById('car_cylinderVolume_id').value="1800"
     document.getElementById('car_mileage').value="50000"
     document.getElementById('car_cylinderVolume_id').dispatchEvent(event)
@@ -92,8 +93,7 @@ function inputString() {
     var select8 = document.querySelector('#car_seat_id'),
     input = document.querySelector('#demobutton');
 
-    select.addEventListener('change',function(){
-    });
+    select.addEventListener('change',function(){});
 
     input.addEventListener('click',function(){
     select.value = 'Toyota';
@@ -105,14 +105,14 @@ function inputString() {
     select7.value='4';
     select8.value='5';
 
-    select.dispatchEvent(new Event('change'))
-    select2.dispatchEvent(new Event('change'))
-    select3.dispatchEvent(new Event('change'))
-    select4.dispatchEvent(new Event('change'))
-    select5.dispatchEvent(new Event('change'))
-    select6.dispatchEvent(new Event('change'))
-    select7.dispatchEvent(new Event('change'))
-    select8.dispatchEvent(new Event('change'))
+    select.dispatchEvent(event2)
+    select2.dispatchEvent(event2)
+    select3.dispatchEvent(event2)
+    select4.dispatchEvent(event2)
+    select5.dispatchEvent(event2)
+    select6.dispatchEvent(event2)
+    select7.dispatchEvent(event2)
+    select8.dispatchEvent(event2)
 });
 }
 
