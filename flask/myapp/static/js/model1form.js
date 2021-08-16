@@ -113,17 +113,23 @@ var selectString = function() {
     select8.dispatchEvent(event2)
 // });
 }
+var inputString = function(){
+    var event = new Event('input',{'bubbles':true,'cancelable':true});
+    document.getElementById('car_cylinderVolume_id').value="1800"
+    document.getElementById('car_mileage_id').value="50000"
+    document.getElementById('car_cylinderVolume_id').dispatchEvent(event)
+    document.getElementById('car_mileage').dispatchEvent(event)
+}
+// var selectFunction = function() {
+//     document.getElementById("car_brand_id").options[1].selected = true;
+//     document.getElementById("car_year_id").options[10].selected = true;
+//     document.getElementById("car_color_id").options[1].selected = true;
+//     document.getElementById("car_driveMode_id").options[1].selected = true;
+//     document.getElementById("car_gear_id").options[1].selected = true;
+//     document.getElementById("car_fuel_id").options[1].selected = true;
+//     document.getElementById("car_door_id").options[2].selected = true;
+//     document.getElementById("car_seat_id").options[1].selected = true;
 
-var selectFunction = function() {
-    document.getElementById("car_brand_id").options[1].selected = true;
-    document.getElementById("car_year_id").options[10].selected = true;
-    document.getElementById("car_color_id").options[1].selected = true;
-    document.getElementById("car_driveMode_id").options[1].selected = true;
-    document.getElementById("car_gear_id").options[1].selected = true;
-    document.getElementById("car_fuel_id").options[1].selected = true;
-    document.getElementById("car_door_id").options[2].selected = true;
-    document.getElementById("car_seat_id").options[1].selected = true;
-
-};
+// };
 
 
