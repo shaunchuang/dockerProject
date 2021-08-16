@@ -74,17 +74,17 @@ Array.from(selected_option).forEach(function(el){
 
 })
 
-function inputString() {
+var selectString = function() {
     // var event = new Event('input',{'bubbles':true,'cancelable':true});
-    var event2 = new Event('select',{'bubbles':true, 'cancelable':true});
+    var event2 = new Event('change',{'bubbles':true, 'cancelable':true});
     // document.getElementById('car_cylinderVolume_id').value="1800"
     // document.getElementById('car_mileage').value="50000"
     // document.getElementById('car_cylinderVolume_id').dispatchEvent(event)
     // document.getElementById('car_mileage').dispatchEvent(event)
 
 
-    var select1 = document.querySelector('#car_brand_id')
-    var select2 = document.querySelector('#car_year_id')
+    var select1 = document.querySelector('car_brand_id')
+    var select2 = document.querySelector('car_year_id')
     var select3 = document.querySelector('#car_color_id')
     var select4 = document.querySelector('#car_driveMode_id')
     var select5 = document.querySelector('#car_gear_id')
@@ -113,5 +113,17 @@ function inputString() {
     select8.dispatchEvent(event2)
 // });
 }
+
+var selectFunction = function() {
+    document.getElementById("car_brand_id").value = "Ford";
+    document.getElementById("car_year_id").value = "2012";
+    document.getElementById("car_color_id").value = "白色";
+    document.getElementById("car_driveMode_id").value = "二輪驅動";
+    document.getElementById("car_gear_id").value = "手自排";
+    document.getElementById("car_fuel_id").value = "汽油";
+    document.getElementById("car_door_id").value = "5";
+    document.getElementById("car_seat_id").value = "5";
+    
+};
 
 
