@@ -55,12 +55,12 @@ var cars={
 
 var carBrand = document.getElementById('car_brand_id');
 var carModel = document.getElementById('car_model_id');
-console.log(10)
+
 
 carBrand.addEventListener('change', function(){
 
 var selected_option = cars[this.value];
-console.log(this.value)
+
 
 while(carModel.options.length >0 ){
     carModel.options.remove(0);
@@ -74,5 +74,12 @@ Array.from(selected_option).forEach(function(el){
 
 })
 
+function inputString() {
+    var event = new Event('input',{'bubbles':true,'cancelable':true});
+    document.getElementById('car_cylinderVolume_id').value="1800"
+    document.getElementById('car_mileage').value="50000"
+    document.getElementById('car_cylinderVolume_id').dispatchEvent(event)
+    document.getElementById('car_mileage').dispatchEvent(event)
+}
 
 
