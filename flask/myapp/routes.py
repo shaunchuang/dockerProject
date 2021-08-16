@@ -114,7 +114,7 @@ def bestCarResult():
 
     cur = connection.cursor()   # init cursor
     # from offset value to query 9 items
-    sqltest = f'SELECT * FROM car_list WHERE ({brandsql}) and ({yearsql}) and ({kmsql}) ORDER BY carYear DESC, carMileage ASC LIMIT {limit} OFFSET {offset}'
+    sqltest = f'SELECT * FROM car_list WHERE ({brandsql}) and ({yearsql}) and ({kmsql}) ORDER BY carYear DESC LIMIT {limit} OFFSET {offset}'
     cur.execute(sqltest)        # execute sql query
     result = cur.fetchall()     # get sql result
 
