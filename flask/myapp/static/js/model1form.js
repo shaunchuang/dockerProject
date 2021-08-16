@@ -94,8 +94,8 @@ var selectString = function() {
     // input = document.querySelector('#demobutton');
 
     // input.addEventListener('click',function(){
-    select1.value = 'Ford';
-    select2.value = '2012';
+    select1.value = 'Toyota';
+    select2.value = '2008';
     select3.value ='白色';
     select4.value ='二輪驅動';
     select5.value ='手自排';
@@ -115,8 +115,8 @@ var selectString = function() {
 }
 var inputString = function(){
     var event = new Event('input',{'bubbles':true,'cancelable':true});
-    document.getElementById('car_cylinderVolume_id').value="1800"
-    document.getElementById('car_mileage_id').value="50000"
+    document.getElementById('car_cylinderVolume_id').value="1500"
+    document.getElementById('car_mileage_id').value="80000"
     document.getElementById('car_cylinderVolume_id').dispatchEvent(event)
     document.getElementById('car_mileage').dispatchEvent(event)
 }
