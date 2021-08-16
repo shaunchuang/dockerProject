@@ -75,12 +75,12 @@ Array.from(selected_option).forEach(function(el){
 })
 
 var selectString = function() {
-    var event = new Event('input',{'bubbles':true,'cancelable':true});
+    // var event = new Event('input',{'bubbles':true,'cancelable':true});
     var event2 = new Event('change',{'bubbles':true, 'cancelable':true});
-    document.getElementById('car_cylinderVolume_id').value="1800"
-    document.getElementById('car_mileage_id').value="50000"
-    document.getElementById('car_cylinderVolume_id').dispatchEvent(event)
-    document.getElementById('car_mileage').dispatchEvent(event)
+    // document.getElementById('car_cylinderVolume_id').value="1800"
+    // document.getElementById('car_mileage_id').value="50000"
+    // document.getElementById('car_cylinderVolume_id').dispatchEvent(event)
+    // document.getElementById('car_mileage').dispatchEvent(event)
 
 
     var select1 = document.querySelector('#car_brand_id')
