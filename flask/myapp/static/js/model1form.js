@@ -94,14 +94,14 @@ function inputString() {
     // input = document.querySelector('#demobutton');
 
     // input.addEventListener('click',function(){
-    select1.value = 'Toyota';
-    select2.value= '2012';
-    select3.value='白色';
-    select4.value='二輪驅動';
-    select5.value='手自排';
-    select6.value='汽油';
-    select7.value='4';
-    select8.value='5';
+    select1.value = 'Ford';
+    select2.value = '2012';
+    select3.value ='白色';
+    select4.value ='二輪驅動';
+    select5.value ='手自排';
+    select6.value ='汽油';
+    select7.value ='5';
+    select8.value ='5';
 
     select1.dispatchEvent(event2)
     select2.dispatchEvent(event2)
