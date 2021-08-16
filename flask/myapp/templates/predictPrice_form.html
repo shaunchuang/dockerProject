@@ -45,7 +45,7 @@
                                     <div class="col-md-12 forformdiv">
                                         <label class="forlabel newform">車款里程</label>
                                         <input class="form-control forblock" id="car_mileage_id" type="text"
-                                            name="car_mileage" placeholder="車款里程">
+                                            name="car_mileage" placeholder="車款里程" maxlength="6" oninput="value=value.replace(/[^\d]/g,'')" required>
                                     </div>
                                     <div class="col-md-12 forformdiv">
                                         <label class="forlabel newform">選擇車輛顏色</label>
@@ -63,7 +63,7 @@
                                     <div class="col-md-12 forformdiv">
                                         <label class="forlabel newform">排氣量</label>
                                         <input class="form-control forblock" id="car_cylinderVolume_id" type="text"
-                                            name="car_cylinderVolume" placeholder="排氣量(cc)">
+                                            name="car_cylinderVolume" placeholder="排氣量(cc)" maxlength="4" oninput="value=value.replace(/[^\d]/g,'')" required>
                                     </div>
                                     <div class="col-md-12 forformdiv">
                                         <label class="forlabel newform">選擇驅動方式</label>
