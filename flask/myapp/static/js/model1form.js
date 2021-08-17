@@ -95,7 +95,7 @@ var selectString = function() {
 
     // input.addEventListener('click',function(){
     select1.value = 'Toyota';
-    select2.value = '2012';
+    select2.value = '2011';
     select3.value ='白色';
     select4.value ='二輪驅動';
     select5.value ='手自排';
