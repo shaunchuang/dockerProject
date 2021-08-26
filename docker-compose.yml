@@ -39,3 +39,18 @@ services:
     restart: always
     ports:
       - 80:80
+      - 443:443
+    command: "/bin/sh -c 'while:;do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+    volumes:
+        - ./nginx/conf:/etc/nginx/conf.d
+        - ./cerbot/conf:/etc/letsencrypt
+        - ./cerbot/www:/var/www/cerbot
+
+
+  cerbot:
+      image: certbot/cerbot
+      entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+      volumes:
+          - ./cerbot/conf:/etc/letsencrypt
+          - ./cerbot/www:/var/www/cerbot
+
